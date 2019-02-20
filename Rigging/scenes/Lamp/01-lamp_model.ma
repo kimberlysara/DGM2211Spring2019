@@ -1,6 +1,10 @@
 //Maya ASCII 2018 scene
 //Name: 01-lamp_model.ma
+<<<<<<< Updated upstream
 //Last modified: Tue, Feb 12, 2019 03:48:27 PM
+=======
+//Last modified: Mon, Feb 11, 2019 02:27:17 PM
+>>>>>>> Stashed changes
 //Codeset: 1252
 requires maya "2018";
 currentUnit -l centimeter -a degree -t film;
@@ -13,14 +17,22 @@ fileInfo "license" "student";
 createNode transform -s -n "persp";
 	rename -uid "B1FA3E2D-49C2-1477-C333-ECB552D89E46";
 	setAttr ".v" no;
+<<<<<<< Updated upstream
 	setAttr ".t" -type "double3" 2.5813732376490286 34.363675328403659 63.588443401054164 ;
+=======
+	setAttr ".t" -type "double3" 2.5813732376489695 34.363675328405364 63.588443401059578 ;
+>>>>>>> Stashed changes
 	setAttr ".r" -type "double3" -17.738352744847099 -0.59999999959378225 1.2424722979910261e-17 ;
 createNode camera -s -n "perspShape" -p "persp";
 	rename -uid "3A3A9519-4606-A2EE-4319-C79D1945B5E0";
 	setAttr -k off ".v" no;
 	setAttr ".pze" yes;
 	setAttr ".fl" 34.999999999999993;
+<<<<<<< Updated upstream
 	setAttr ".coi" 69.751003149130895;
+=======
+	setAttr ".coi" 69.751003149136793;
+>>>>>>> Stashed changes
 	setAttr ".imn" -type "string" "persp";
 	setAttr ".den" -type "string" "persp_depth";
 	setAttr ".man" -type "string" "persp_mask";
@@ -2734,7 +2746,7 @@ createNode displayLayer -n "joints_layer";
 	setAttr ".v" no;
 	setAttr ".do" 2;
 createNode nodeGraphEditorInfo -n "MayaNodeEditorSavedTabsInfo";
-	rename -uid "EA4E5FA9-4A5A-7693-FC77-00918FF60520";
+	rename -uid "902BCEC7-466D-9064-087A-1EABF28A2108";
 	setAttr ".pee" yes;
 	setAttr ".tgi[0].tn" -type "string" "Untitled_1";
 	setAttr ".tgi[0].vl" -type "double2" -1883.681211428014 -19.934720641271266 ;
