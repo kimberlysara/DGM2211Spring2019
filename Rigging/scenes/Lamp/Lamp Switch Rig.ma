@@ -1,6 +1,6 @@
 //Maya ASCII 2018 scene
 //Name: Lamp Switch Rig.ma
-//Last modified: Wed, Apr 10, 2019 05:53:28 PM
+//Last modified: Thu, Apr 11, 2019 11:32:07 AM
 //Codeset: 1252
 file -rdi 1 -ns "Lamp_ref" -rfn "Lamp_refRN" -op "v=0;" -typ "mayaAscii" "E:/Repos/DGM2211Spring2019/Rigging/scenes/Lamp/Lamp ref.ma";
 file -r -ns "Lamp_ref" -dr 1 -rfn "Lamp_refRN" -op "v=0;" -typ "mayaAscii" "E:/Repos/DGM2211Spring2019/Rigging/scenes/Lamp/Lamp ref.ma";
@@ -10,18 +10,18 @@ fileInfo "application" "maya";
 fileInfo "product" "Maya 2018";
 fileInfo "version" "2018";
 fileInfo "cutIdentifier" "201706261615-f9658c4cfc";
-fileInfo "osv" "Microsoft Windows 8 Home Premium Edition, 64-bit  (Build 9200)\n";
+fileInfo "osv" "Microsoft Windows 8 Enterprise Edition, 64-bit  (Build 9200)\n";
 fileInfo "license" "student";
 createNode transform -s -n "persp";
 	rename -uid "DFB58FDB-4718-37AF-AD6D-198620CF36BD";
 	setAttr ".v" no;
-	setAttr ".t" -type "double3" 9.2215940641958891 13.181664140519715 341.05146954709733 ;
-	setAttr ".r" -type "double3" 0.86164727036380329 -360.19999999992905 1.125935640865035e-17 ;
+	setAttr ".t" -type "double3" 29.887065673317611 99.314448760969654 175.18976826790009 ;
+	setAttr ".r" -type "double3" -21.93835272963619 -353.79999999992862 0 ;
 createNode camera -s -n "perspShape" -p "persp";
 	rename -uid "A5A6EFD3-4EC3-EAFC-9E02-2B9F39B5DED4";
 	setAttr -k off ".v" no;
 	setAttr ".fl" 34.999999999999993;
-	setAttr ".coi" 352.49578892832875;
+	setAttr ".coi" 204.21443505434118;
 	setAttr ".imn" -type "string" "persp";
 	setAttr ".den" -type "string" "persp_depth";
 	setAttr ".man" -type "string" "persp_mask";
@@ -364,7 +364,7 @@ createNode transform -n "Arm_PV_Ik_cntrl_grp" -p "Ik_cntrl_master_grp";
 	setAttr ".s" -type "double3" 1.7248230679572261 1.7248230679572261 1.7248230679572261 ;
 createNode transform -n "Arm_PV_Ik_Cntrl_offset_grp" -p "Arm_PV_Ik_cntrl_grp";
 	rename -uid "BACA1238-4906-F6A1-3659-EDBE676348CA";
-	setAttr ".t" -type "double3" -6.5821359727642728 5.5237020474956617 0 ;
+	setAttr ".t" -type "double3" -3.6513582034150582 3.0642051254789755 -1.0155378328053883e-46 ;
 	setAttr ".r" -type "double3" -90.000000000000028 0 -37.499463851076648 ;
 createNode transform -n "Arm_PV_Ik_Cntrl" -p "Arm_PV_Ik_Cntrl_offset_grp";
 	rename -uid "7E41F3D4-4470-33B5-6EF8-FB81784E8086";
@@ -4010,19 +4010,19 @@ createNode parentConstraint -n "head_geo_parentConstraint1" -p "head_geo";
 	setAttr ".rsrr" -type "double3" 0 0 1.2722218725854067e-14 ;
 	setAttr -k on ".w0";
 createNode lightLinker -s -n "lightLinker1";
-	rename -uid "5C8F8F21-4E6A-3A42-BD94-AFA406BF471B";
+	rename -uid "089114A5-4357-D00E-EDD9-888794B38C48";
 	setAttr -s 2 ".lnk";
 	setAttr -s 2 ".slnk";
 createNode shapeEditorManager -n "shapeEditorManager";
-	rename -uid "0AFFC56B-4DA8-931F-E0B8-B297F7D0949F";
+	rename -uid "7723CAC4-4E04-2C9C-90FC-F88DA320B288";
 createNode poseInterpolatorManager -n "poseInterpolatorManager";
-	rename -uid "DA5BAF4C-48AD-4CF2-2A5E-10BC8A53BB3B";
+	rename -uid "A274FECA-4858-8DE6-6E15-0EA48FF3C24A";
 createNode displayLayerManager -n "layerManager";
-	rename -uid "B9F62EDC-40B7-7D26-F04C-9F839E86AD3E";
+	rename -uid "70701810-4977-1677-6E8E-92962F74CEE5";
 createNode displayLayer -n "defaultLayer";
 	rename -uid "6744B28E-4F4E-8566-CFEC-999F49335A4C";
 createNode renderLayerManager -n "renderLayerManager";
-	rename -uid "C2E1134E-43B2-1101-383D-9AB7513CA40E";
+	rename -uid "A542D784-486F-E7BB-AB57-3F8FA5E2230F";
 createNode renderLayer -n "defaultRenderLayer";
 	rename -uid "D922CDAE-404F-8A99-BB3E-F5A84AA9283D";
 	setAttr ".g" yes;
@@ -4042,7 +4042,7 @@ createNode reference -n "Lamp_refRN";
 	setAttr ".ed" -type "dataReferenceEdits" 
 		"Lamp_refRN"
 		"Lamp_refRN" 0
-		"Lamp_refRN" 248
+		"Lamp_refRN" 44
 		2 "|Lamp_ref:Geometry" "visibility" " 0"
 		2 "|Lamp_ref:Geometry" "translate" " -type \"double3\" 0 0 0"
 		2 "|Lamp_ref:Geometry|Lamp_ref:base_geo" "translate" " -type \"double3\" 0 0 0"
@@ -4096,424 +4096,26 @@ createNode reference -n "Lamp_refRN";
 		
 		2 "|Lamp_ref:Geometry|Lamp_ref:head_geo|Lamp_ref:head_geoShape" "pnts" " -s 206"
 		
-		2 "|Lamp_ref:Geometry|Lamp_ref:head_geo|Lamp_ref:head_geoShape" "pnts[0]" 
-		" -type \"float3\" -1.7907305 26.751818 -0.0088138655000000003"
-		2 "|Lamp_ref:Geometry|Lamp_ref:head_geo|Lamp_ref:head_geoShape" "pnts[1]" 
-		" -type \"float3\" -4.75385759999999991 18.182074 -2.26720310000000014"
-		2 "|Lamp_ref:Geometry|Lamp_ref:head_geo|Lamp_ref:head_geoShape" "pnts[2]" 
-		" -type \"float3\" -5.95789149999999967 19.425503 -3.9204604999999999"
-		2 "|Lamp_ref:Geometry|Lamp_ref:head_geo|Lamp_ref:head_geoShape" "pnts[3]" 
-		" -type \"float3\" -7.60263060000000035 21.124058 -4.52559190000000022"
-		2 "|Lamp_ref:Geometry|Lamp_ref:head_geo|Lamp_ref:head_geoShape" "pnts[4]" 
-		" -type \"float3\" -9.24736979999999953 22.822613 -3.9204604999999999"
-		2 "|Lamp_ref:Geometry|Lamp_ref:head_geo|Lamp_ref:head_geoShape" "pnts[5]" 
-		" -type \"float3\" -10.451404 24.066044 -2.26720310000000014"
-		2 "|Lamp_ref:Geometry|Lamp_ref:head_geo|Lamp_ref:head_geoShape" "pnts[6]" 
-		" -type \"float3\" -10.892109 24.521168 -0.0088138188999999992"
-		2 "|Lamp_ref:Geometry|Lamp_ref:head_geo|Lamp_ref:head_geoShape" "pnts[7]" 
-		" -type \"float3\" -10.451404 24.066044 2.24957539999999989"
-		2 "|Lamp_ref:Geometry|Lamp_ref:head_geo|Lamp_ref:head_geoShape" "pnts[8]" 
-		" -type \"float3\" -9.24736979999999953 22.822613 3.90283269999999982"
-		2 "|Lamp_ref:Geometry|Lamp_ref:head_geo|Lamp_ref:head_geoShape" "pnts[9]" 
-		" -type \"float3\" -7.60263060000000035 21.124058 4.50796460000000021"
-		2 "|Lamp_ref:Geometry|Lamp_ref:head_geo|Lamp_ref:head_geoShape" "pnts[10]" 
-		" -type \"float3\" -5.95789149999999967 19.425503 3.90283269999999982"
-		2 "|Lamp_ref:Geometry|Lamp_ref:head_geo|Lamp_ref:head_geoShape" "pnts[11]" 
-		" -type \"float3\" -4.75385759999999991 18.182074 2.24957539999999989"
-		2 "|Lamp_ref:Geometry|Lamp_ref:head_geo|Lamp_ref:head_geoShape" "pnts[12]" 
-		" -type \"float3\" -4.31315179999999998 17.726948 -0.0088138188999999992"
-		2 "|Lamp_ref:Geometry|Lamp_ref:head_geo|Lamp_ref:head_geoShape" "pnts[13]" 
-		" -type \"float3\" -4.82124810000000004 18.251667 -2.21377990000000002"
-		2 "|Lamp_ref:Geometry|Lamp_ref:head_geo|Lamp_ref:head_geoShape" "pnts[14]" 
-		" -type \"float3\" -5.9968003999999997 19.465681 -3.82792850000000007"
-		2 "|Lamp_ref:Geometry|Lamp_ref:head_geo|Lamp_ref:head_geoShape" "pnts[15]" 
-		" -type \"float3\" -7.602633 21.124054 -4.41874549999999999"
-		2 "|Lamp_ref:Geometry|Lamp_ref:head_geo|Lamp_ref:head_geoShape" "pnts[16]" 
-		" -type \"float3\" -9.20846369999999936 22.782431 -3.82792850000000007"
-		2 "|Lamp_ref:Geometry|Lamp_ref:head_geo|Lamp_ref:head_geoShape" "pnts[17]" 
-		" -type \"float3\" -10.384017 23.996447 -2.21377990000000002"
-		2 "|Lamp_ref:Geometry|Lamp_ref:head_geo|Lamp_ref:head_geoShape" "pnts[18]" 
-		" -type \"float3\" -10.814297 24.440805 -0.0088138188999999992"
-		2 "|Lamp_ref:Geometry|Lamp_ref:head_geo|Lamp_ref:head_geoShape" "pnts[19]" 
-		" -type \"float3\" -10.384017 23.996447 2.19615220000000022"
-		2 "|Lamp_ref:Geometry|Lamp_ref:head_geo|Lamp_ref:head_geoShape" "pnts[20]" 
-		" -type \"float3\" -9.20846369999999936 22.782431 3.81030079999999982"
-		2 "|Lamp_ref:Geometry|Lamp_ref:head_geo|Lamp_ref:head_geoShape" "pnts[21]" 
-		" -type \"float3\" -7.602633 21.124054 4.40111830000000026"
-		2 "|Lamp_ref:Geometry|Lamp_ref:head_geo|Lamp_ref:head_geoShape" "pnts[22]" 
-		" -type \"float3\" -5.9968003999999997 19.465681 3.81030079999999982"
-		2 "|Lamp_ref:Geometry|Lamp_ref:head_geo|Lamp_ref:head_geoShape" "pnts[23]" 
-		" -type \"float3\" -4.82124810000000004 18.251667 2.19615220000000022"
-		2 "|Lamp_ref:Geometry|Lamp_ref:head_geo|Lamp_ref:head_geoShape" "pnts[24]" 
-		" -type \"float3\" -4.39096740000000008 17.807306 -0.0088138188999999992"
-		2 "|Lamp_ref:Geometry|Lamp_ref:head_geo|Lamp_ref:head_geoShape" "pnts[25]" 
-		" -type \"float3\" -2.1931579000000001 26.362143 -0.0088138655000000003"
-		2 "|Lamp_ref:Geometry|Lamp_ref:head_geo|Lamp_ref:head_geoShape" "pnts[26]" 
-		" -type \"float3\" -0.92676765000000005 25.859587 -0.69372785000000003"
-		2 "|Lamp_ref:Geometry|Lamp_ref:head_geo|Lamp_ref:head_geoShape" "pnts[27]" 
-		" -type \"float3\" -0.83731239999999996 25.767204 -0.76464449999999995"
-		2 "|Lamp_ref:Geometry|Lamp_ref:head_geo|Lamp_ref:head_geoShape" "pnts[28]" 
-		" -type \"float3\" -0.92637192999999995 25.655149 -0.77487218000000002"
-		2 "|Lamp_ref:Geometry|Lamp_ref:head_geo|Lamp_ref:head_geoShape" "pnts[29]" 
-		" -type \"float3\" -1.29192109999999993 26.236689 -1.19511959999999995"
-		2 "|Lamp_ref:Geometry|Lamp_ref:head_geo|Lamp_ref:head_geoShape" "pnts[30]" 
-		" -type \"float3\" -1.24027419999999999 26.18335 -1.31795069999999992"
-		2 "|Lamp_ref:Geometry|Lamp_ref:head_geo|Lamp_ref:head_geoShape" "pnts[31]" 
-		" -type \"float3\" -1.33478619999999992 26.076927 -1.33566589999999996"
-		2 "|Lamp_ref:Geometry|Lamp_ref:head_geo|Lamp_ref:head_geoShape" "pnts[32]" 
-		" -type \"float3\" -1.7907305 26.751818 -1.378642"
-		2 "|Lamp_ref:Geometry|Lamp_ref:head_geo|Lamp_ref:head_geoShape" "pnts[33]" 
-		" -type \"float3\" -1.7907305 26.751818 -1.52047510000000008"
-		2 "|Lamp_ref:Geometry|Lamp_ref:head_geo|Lamp_ref:head_geoShape" "pnts[34]" 
-		" -type \"float3\" -1.89269130000000008 26.653088 -1.54093049999999998"
-		2 "|Lamp_ref:Geometry|Lamp_ref:head_geo|Lamp_ref:head_geoShape" "pnts[35]" 
-		" -type \"float3\" -2.2895395999999999 27.266947 -1.19511959999999995"
-		2 "|Lamp_ref:Geometry|Lamp_ref:head_geo|Lamp_ref:head_geoShape" "pnts[36]" 
-		" -type \"float3\" -2.34118650000000006 27.320286 -1.31795069999999992"
-		2 "|Lamp_ref:Geometry|Lamp_ref:head_geo|Lamp_ref:head_geoShape" "pnts[37]" 
-		" -type \"float3\" -2.45059609999999983 27.229248 -1.33566589999999996"
-		2 "|Lamp_ref:Geometry|Lamp_ref:head_geo|Lamp_ref:head_geoShape" "pnts[38]" 
-		" -type \"float3\" -2.65469309999999981 27.644051 -0.69372785000000003"
-		2 "|Lamp_ref:Geometry|Lamp_ref:head_geo|Lamp_ref:head_geoShape" "pnts[39]" 
-		" -type \"float3\" -2.7441485000000001 27.736433 -0.76464449999999995"
-		2 "|Lamp_ref:Geometry|Lamp_ref:head_geo|Lamp_ref:head_geoShape" "pnts[40]" 
-		" -type \"float3\" -2.85901089999999991 27.651026 -0.77487218000000002"
-		2 "|Lamp_ref:Geometry|Lamp_ref:head_geo|Lamp_ref:head_geoShape" "pnts[41]" 
-		" -type \"float3\" -2.78834869999999979 27.782078 -0.0088138655000000003"
-		2 "|Lamp_ref:Geometry|Lamp_ref:head_geo|Lamp_ref:head_geoShape" "pnts[42]" 
-		" -type \"float3\" -2.89164280000000007 27.888752 -0.0088138655000000003"
-		2 "|Lamp_ref:Geometry|Lamp_ref:head_geo|Lamp_ref:head_geoShape" "pnts[43]" 
-		" -type \"float3\" -3.00850110000000015 27.805405 -0.0088138655000000003"
-		2 "|Lamp_ref:Geometry|Lamp_ref:head_geo|Lamp_ref:head_geoShape" "pnts[44]" 
-		" -type \"float3\" -2.65469309999999981 27.644051 0.67610031000000004"
-		2 "|Lamp_ref:Geometry|Lamp_ref:head_geo|Lamp_ref:head_geoShape" "pnts[45]" 
-		" -type \"float3\" -2.7441485000000001 27.736433 0.74701673000000002"
-		2 "|Lamp_ref:Geometry|Lamp_ref:head_geo|Lamp_ref:head_geoShape" "pnts[46]" 
-		" -type \"float3\" -2.85901089999999991 27.651026 0.75724477000000001"
-		2 "|Lamp_ref:Geometry|Lamp_ref:head_geo|Lamp_ref:head_geoShape" "pnts[47]" 
-		" -type \"float3\" -2.2895395999999999 27.266947 1.17749210000000004"
-		2 "|Lamp_ref:Geometry|Lamp_ref:head_geo|Lamp_ref:head_geoShape" "pnts[48]" 
-		" -type \"float3\" -2.34118650000000006 27.320286 1.30032309999999995"
-		2 "|Lamp_ref:Geometry|Lamp_ref:head_geo|Lamp_ref:head_geoShape" "pnts[49]" 
-		" -type \"float3\" -2.45059609999999983 27.229248 1.3180381000000001"
-		2 "|Lamp_ref:Geometry|Lamp_ref:head_geo|Lamp_ref:head_geoShape" "pnts[50]" 
-		" -type \"float3\" -1.7907305 26.751818 1.36101420000000006"
-		2 "|Lamp_ref:Geometry|Lamp_ref:head_geo|Lamp_ref:head_geoShape" "pnts[51]" 
-		" -type \"float3\" -1.7907305 26.751818 1.50284770000000001"
-		2 "|Lamp_ref:Geometry|Lamp_ref:head_geo|Lamp_ref:head_geoShape" "pnts[52]" 
-		" -type \"float3\" -1.89269130000000008 26.653088 1.52330290000000002"
-		2 "|Lamp_ref:Geometry|Lamp_ref:head_geo|Lamp_ref:head_geoShape" "pnts[53]" 
-		" -type \"float3\" -1.29192109999999993 26.236689 1.17749210000000004"
-		2 "|Lamp_ref:Geometry|Lamp_ref:head_geo|Lamp_ref:head_geoShape" "pnts[54]" 
-		" -type \"float3\" -1.24027419999999999 26.18335 1.30032309999999995"
-		2 "|Lamp_ref:Geometry|Lamp_ref:head_geo|Lamp_ref:head_geoShape" "pnts[55]" 
-		" -type \"float3\" -1.33478619999999992 26.076927 1.3180381000000001"
-		2 "|Lamp_ref:Geometry|Lamp_ref:head_geo|Lamp_ref:head_geoShape" "pnts[56]" 
-		" -type \"float3\" -0.92676765000000005 25.859587 0.67610031000000004"
-		2 "|Lamp_ref:Geometry|Lamp_ref:head_geo|Lamp_ref:head_geoShape" "pnts[57]" 
-		" -type \"float3\" -0.83731239999999996 25.767204 0.74701673000000002"
-		2 "|Lamp_ref:Geometry|Lamp_ref:head_geo|Lamp_ref:head_geoShape" "pnts[58]" 
-		" -type \"float3\" -0.92637192999999995 25.655149 0.75724477000000001"
-		2 "|Lamp_ref:Geometry|Lamp_ref:head_geo|Lamp_ref:head_geoShape" "pnts[59]" 
-		" -type \"float3\" -0.79311222000000003 25.72156 -0.0088138655000000003"
-		2 "|Lamp_ref:Geometry|Lamp_ref:head_geo|Lamp_ref:head_geoShape" "pnts[60]" 
-		" -type \"float3\" -0.68981791000000003 25.614885 -0.0088138655000000003"
-		2 "|Lamp_ref:Geometry|Lamp_ref:head_geo|Lamp_ref:head_geoShape" "pnts[61]" 
-		" -type \"float3\" -0.77688146000000002 25.500767 -0.0088138655000000003"
-		2 "|Lamp_ref:Geometry|Lamp_ref:head_geo|Lamp_ref:head_geoShape" "pnts[62]" 
-		" -type \"float3\" -1.29800929999999992 25.573507 -0.66464835"
-		2 "|Lamp_ref:Geometry|Lamp_ref:head_geo|Lamp_ref:head_geoShape" "pnts[63]" 
-		" -type \"float3\" -1.19855890000000009 25.485891 -0.73751074000000005"
-		2 "|Lamp_ref:Geometry|Lamp_ref:head_geo|Lamp_ref:head_geoShape" "pnts[64]" 
-		" -type \"float3\" -1.28976979999999997 25.370085 -0.74840081000000003"
-		2 "|Lamp_ref:Geometry|Lamp_ref:head_geo|Lamp_ref:head_geoShape" "pnts[65]" 
-		" -type \"float3\" -1.64765969999999995 25.934599 -1.14475269999999996"
-		2 "|Lamp_ref:Geometry|Lamp_ref:head_geo|Lamp_ref:head_geoShape" "pnts[66]" 
-		" -type \"float3\" -1.58705439999999998 25.8871 -1.27095390000000008"
-		2 "|Lamp_ref:Geometry|Lamp_ref:head_geo|Lamp_ref:head_geoShape" "pnts[67]" 
-		" -type \"float3\" -1.68407130000000005 25.777287 -1.28981609999999991"
-		2 "|Lamp_ref:Geometry|Lamp_ref:head_geo|Lamp_ref:head_geoShape" "pnts[68]" 
-		" -type \"float3\" -2.12529089999999998 26.427858 -1.32048290000000001"
-		2 "|Lamp_ref:Geometry|Lamp_ref:head_geo|Lamp_ref:head_geoShape" "pnts[69]" 
-		" -type \"float3\" -2.11774970000000007 26.435158 -1.46620759999999994"
-		2 "|Lamp_ref:Geometry|Lamp_ref:head_geo|Lamp_ref:head_geoShape" "pnts[70]" 
-		" -type \"float3\" -2.22269769999999989 26.333538 -1.48798760000000008"
-		2 "|Lamp_ref:Geometry|Lamp_ref:head_geo|Lamp_ref:head_geoShape" "pnts[71]" 
-		" -type \"float3\" -2.6029217 26.921118 -1.14475269999999996"
-		2 "|Lamp_ref:Geometry|Lamp_ref:head_geo|Lamp_ref:head_geoShape" "pnts[72]" 
-		" -type \"float3\" -2.64844539999999995 26.983219 -1.27095390000000008"
-		2 "|Lamp_ref:Geometry|Lamp_ref:head_geo|Lamp_ref:head_geoShape" "pnts[73]" 
-		" -type \"float3\" -2.76132389999999983 26.889786 -1.28981609999999991"
-		2 "|Lamp_ref:Geometry|Lamp_ref:head_geo|Lamp_ref:head_geoShape" "pnts[74]" 
-		" -type \"float3\" -2.95257209999999981 27.282207 -0.66464835"
-		2 "|Lamp_ref:Geometry|Lamp_ref:head_geo|Lamp_ref:head_geoShape" "pnts[75]" 
-		" -type \"float3\" -3.03694109999999995 27.384424 -0.73751074000000005"
-		2 "|Lamp_ref:Geometry|Lamp_ref:head_geo|Lamp_ref:head_geoShape" "pnts[76]" 
-		" -type \"float3\" -3.15562580000000015 27.296989 -0.74840081000000003"
-		2 "|Lamp_ref:Geometry|Lamp_ref:head_geo|Lamp_ref:head_geoShape" "pnts[77]" 
-		" -type \"float3\" -3.08055279999999998 27.414375 -0.0088138655000000003"
-		2 "|Lamp_ref:Geometry|Lamp_ref:head_geo|Lamp_ref:head_geoShape" "pnts[78]" 
-		" -type \"float3\" -3.17914079999999988 27.531279 -0.0088138655000000003"
-		2 "|Lamp_ref:Geometry|Lamp_ref:head_geo|Lamp_ref:head_geoShape" "pnts[79]" 
-		" -type \"float3\" -3.29995040000000017 27.446035 -0.0088138655000000003"
-		2 "|Lamp_ref:Geometry|Lamp_ref:head_geo|Lamp_ref:head_geoShape" "pnts[80]" 
-		" -type \"float3\" -2.95257209999999981 27.282207 0.64702051999999999"
-		2 "|Lamp_ref:Geometry|Lamp_ref:head_geo|Lamp_ref:head_geoShape" "pnts[81]" 
-		" -type \"float3\" -3.03694109999999995 27.384424 0.71988337999999996"
-		2 "|Lamp_ref:Geometry|Lamp_ref:head_geo|Lamp_ref:head_geoShape" "pnts[82]" 
-		" -type \"float3\" -3.15562580000000015 27.296989 0.73077291"
-		2 "|Lamp_ref:Geometry|Lamp_ref:head_geo|Lamp_ref:head_geoShape" "pnts[83]" 
-		" -type \"float3\" -2.6029217 26.921118 1.12712509999999999"
-		2 "|Lamp_ref:Geometry|Lamp_ref:head_geo|Lamp_ref:head_geoShape" "pnts[84]" 
-		" -type \"float3\" -2.64844539999999995 26.983219 1.25332629999999989"
-		2 "|Lamp_ref:Geometry|Lamp_ref:head_geo|Lamp_ref:head_geoShape" "pnts[85]" 
-		" -type \"float3\" -2.76132389999999983 26.889786 1.27218830000000005"
-		2 "|Lamp_ref:Geometry|Lamp_ref:head_geo|Lamp_ref:head_geoShape" "pnts[86]" 
-		" -type \"float3\" -2.12529089999999998 26.427858 1.30285530000000005"
-		2 "|Lamp_ref:Geometry|Lamp_ref:head_geo|Lamp_ref:head_geoShape" "pnts[87]" 
-		" -type \"float3\" -2.11774970000000007 26.435158 1.44858010000000004"
-		2 "|Lamp_ref:Geometry|Lamp_ref:head_geo|Lamp_ref:head_geoShape" "pnts[88]" 
-		" -type \"float3\" -2.22269769999999989 26.333538 1.47035990000000005"
-		2 "|Lamp_ref:Geometry|Lamp_ref:head_geo|Lamp_ref:head_geoShape" "pnts[89]" 
-		" -type \"float3\" -1.64765969999999995 25.934599 1.12712509999999999"
-		2 "|Lamp_ref:Geometry|Lamp_ref:head_geo|Lamp_ref:head_geoShape" "pnts[90]" 
-		" -type \"float3\" -1.58705439999999998 25.8871 1.25332629999999989"
-		2 "|Lamp_ref:Geometry|Lamp_ref:head_geo|Lamp_ref:head_geoShape" "pnts[91]" 
-		" -type \"float3\" -1.68407130000000005 25.777287 1.27218830000000005"
-		2 "|Lamp_ref:Geometry|Lamp_ref:head_geo|Lamp_ref:head_geoShape" "pnts[92]" 
-		" -type \"float3\" -1.29800929999999992 25.573507 0.64702051999999999"
-		2 "|Lamp_ref:Geometry|Lamp_ref:head_geo|Lamp_ref:head_geoShape" "pnts[93]" 
-		" -type \"float3\" -1.19855890000000009 25.485891 0.71988337999999996"
-		2 "|Lamp_ref:Geometry|Lamp_ref:head_geo|Lamp_ref:head_geoShape" "pnts[94]" 
-		" -type \"float3\" -1.28976979999999997 25.370085 0.73077291"
-		2 "|Lamp_ref:Geometry|Lamp_ref:head_geo|Lamp_ref:head_geoShape" "pnts[95]" 
-		" -type \"float3\" -1.17002859999999997 25.441339 -0.0088138655000000003"
-		2 "|Lamp_ref:Geometry|Lamp_ref:head_geo|Lamp_ref:head_geoShape" "pnts[96]" 
-		" -type \"float3\" -1.05635919999999994 25.339039 -0.0088138655000000003"
-		2 "|Lamp_ref:Geometry|Lamp_ref:head_geo|Lamp_ref:head_geoShape" "pnts[97]" 
-		" -type \"float3\" -1.14544519999999994 25.221039 -0.0088138655000000003"
-		2 "|Lamp_ref:Geometry|Lamp_ref:head_geo|Lamp_ref:head_geoShape" "pnts[98]" 
-		" -type \"float3\" -10.401796 24.077747 2.23518250000000007"
-		2 "|Lamp_ref:Geometry|Lamp_ref:head_geo|Lamp_ref:head_geoShape" "pnts[99]" 
-		" -type \"float3\" -10.839693 24.529974 -0.0088138188999999992"
-		2 "|Lamp_ref:Geometry|Lamp_ref:head_geo|Lamp_ref:head_geoShape" "pnts[100]" 
-		" -type \"float3\" -10.401796 24.077747 -2.25281049999999983"
-		2 "|Lamp_ref:Geometry|Lamp_ref:head_geo|Lamp_ref:head_geoShape" "pnts[101]" 
-		" -type \"float3\" -9.20543580000000006 22.842243 -3.89553169999999982"
-		2 "|Lamp_ref:Geometry|Lamp_ref:head_geo|Lamp_ref:head_geoShape" "pnts[102]" 
-		" -type \"float3\" -7.57117839999999998 21.154514 -4.49680660000000021"
-		2 "|Lamp_ref:Geometry|Lamp_ref:head_geo|Lamp_ref:head_geoShape" "pnts[103]" 
-		" -type \"float3\" -5.9369215999999998 19.466784 -3.89553169999999982"
-		2 "|Lamp_ref:Geometry|Lamp_ref:head_geo|Lamp_ref:head_geoShape" "pnts[104]" 
-		" -type \"float3\" -4.74056009999999972 18.231277 -2.25281049999999983"
-		2 "|Lamp_ref:Geometry|Lamp_ref:head_geo|Lamp_ref:head_geoShape" "pnts[105]" 
-		" -type \"float3\" -4.30266380000000037 17.779053 -0.0088138188999999992"
-		2 "|Lamp_ref:Geometry|Lamp_ref:head_geo|Lamp_ref:head_geoShape" "pnts[106]" 
-		" -type \"float3\" -4.74056009999999972 18.231277 2.23518250000000007"
-		2 "|Lamp_ref:Geometry|Lamp_ref:head_geo|Lamp_ref:head_geoShape" "pnts[107]" 
-		" -type \"float3\" -5.9369215999999998 19.466784 3.87790390000000018"
-		2 "|Lamp_ref:Geometry|Lamp_ref:head_geo|Lamp_ref:head_geoShape" "pnts[108]" 
-		" -type \"float3\" -7.57117839999999998 21.154514 4.47917939999999959"
-		2 "|Lamp_ref:Geometry|Lamp_ref:head_geo|Lamp_ref:head_geoShape" "pnts[109]" 
-		" -type \"float3\" -9.20543580000000006 22.842243 3.87790390000000018"
-		2 "|Lamp_ref:Geometry|Lamp_ref:head_geo|Lamp_ref:head_geoShape" "pnts[110]" 
-		" -type \"float3\" -10.319714 24.010836 2.17718409999999984"
-		2 "|Lamp_ref:Geometry|Lamp_ref:head_geo|Lamp_ref:head_geoShape" "pnts[111]" 
-		" -type \"float3\" -10.746291 24.45137 -0.0088138188999999992"
-		2 "|Lamp_ref:Geometry|Lamp_ref:head_geo|Lamp_ref:head_geoShape" "pnts[112]" 
-		" -type \"float3\" -10.319714 24.010836 -2.19481180000000009"
-		2 "|Lamp_ref:Geometry|Lamp_ref:head_geo|Lamp_ref:head_geoShape" "pnts[113]" 
-		" -type \"float3\" -9.154273 22.807261 -3.79507489999999992"
-		2 "|Lamp_ref:Geometry|Lamp_ref:head_geo|Lamp_ref:head_geoShape" "pnts[114]" 
-		" -type \"float3\" -7.56225539999999974 21.163153 -4.38080979999999975"
-		2 "|Lamp_ref:Geometry|Lamp_ref:head_geo|Lamp_ref:head_geoShape" "pnts[115]" 
-		" -type \"float3\" -5.97023729999999997 19.519045 -3.79507489999999992"
-		2 "|Lamp_ref:Geometry|Lamp_ref:head_geo|Lamp_ref:head_geoShape" "pnts[116]" 
-		" -type \"float3\" -4.80479810000000018 18.315474 -2.19481180000000009"
-		2 "|Lamp_ref:Geometry|Lamp_ref:head_geo|Lamp_ref:head_geoShape" "pnts[117]" 
-		" -type \"float3\" -4.37821869999999969 17.874935 -0.0088138188999999992"
-		2 "|Lamp_ref:Geometry|Lamp_ref:head_geo|Lamp_ref:head_geoShape" "pnts[118]" 
-		" -type \"float3\" -4.80479810000000018 18.315474 2.17718409999999984"
-		2 "|Lamp_ref:Geometry|Lamp_ref:head_geo|Lamp_ref:head_geoShape" "pnts[119]" 
-		" -type \"float3\" -5.97023729999999997 19.519045 3.77744720000000012"
-		2 "|Lamp_ref:Geometry|Lamp_ref:head_geo|Lamp_ref:head_geoShape" "pnts[120]" 
-		" -type \"float3\" -7.56225539999999974 21.163153 4.36318249999999974"
-		2 "|Lamp_ref:Geometry|Lamp_ref:head_geo|Lamp_ref:head_geoShape" "pnts[121]" 
-		" -type \"float3\" -9.154273 22.807261 3.77744720000000012"
-		2 "|Lamp_ref:Geometry|Lamp_ref:head_geo|Lamp_ref:head_geoShape" "pnts[122]" 
-		" -type \"float3\" -3.75499150000000004 21.833315 -1.2038641000000001"
-		2 "|Lamp_ref:Geometry|Lamp_ref:head_geo|Lamp_ref:head_geoShape" "pnts[123]" 
-		" -type \"float3\" -3.6537234999999999 22.203424 -1.09608409999999989"
-		2 "|Lamp_ref:Geometry|Lamp_ref:head_geo|Lamp_ref:head_geoShape" "pnts[124]" 
-		" -type \"float3\" -3.408941 22.513222 -1.06725469999999989"
-		2 "|Lamp_ref:Geometry|Lamp_ref:head_geo|Lamp_ref:head_geoShape" "pnts[125]" 
-		" -type \"float3\" -3.97323579999999987 23.09598 -1.842088"
-		2 "|Lamp_ref:Geometry|Lamp_ref:head_geo|Lamp_ref:head_geoShape" "pnts[126]" 
-		" -type \"float3\" -4.23338889999999957 22.802055 -1.89202139999999996"
-		2 "|Lamp_ref:Geometry|Lamp_ref:head_geo|Lamp_ref:head_geoShape" "pnts[127]" 
-		" -type \"float3\" -4.39211849999999959 22.491285 -2.07870240000000006"
-		2 "|Lamp_ref:Geometry|Lamp_ref:head_geo|Lamp_ref:head_geoShape" "pnts[128]" 
-		" -type \"float3\" -4.74407669999999992 23.892044 -2.12569570000000008"
-		2 "|Lamp_ref:Geometry|Lamp_ref:head_geo|Lamp_ref:head_geoShape" "pnts[129]" 
-		" -type \"float3\" -5.02522559999999974 23.619802 -2.18335409999999985"
-		2 "|Lamp_ref:Geometry|Lamp_ref:head_geo|Lamp_ref:head_geoShape" "pnts[130]" 
-		" -type \"float3\" -5.26244970000000034 23.390095 -2.3989145999999999"
-		2 "|Lamp_ref:Geometry|Lamp_ref:head_geo|Lamp_ref:head_geoShape" "pnts[131]" 
-		" -type \"float3\" -5.51491790000000037 24.688105 -1.842088"
-		2 "|Lamp_ref:Geometry|Lamp_ref:head_geo|Lamp_ref:head_geoShape" "pnts[132]" 
-		" -type \"float3\" -5.81706289999999981 24.437546 -1.89202139999999996"
-		2 "|Lamp_ref:Geometry|Lamp_ref:head_geo|Lamp_ref:head_geoShape" "pnts[133]" 
-		" -type \"float3\" -6.132781 24.288904 -2.07870240000000006"
-		2 "|Lamp_ref:Geometry|Lamp_ref:head_geo|Lamp_ref:head_geoShape" "pnts[134]" 
-		" -type \"float3\" -6.07921309999999959 25.270866 -1.06725469999999989"
-		2 "|Lamp_ref:Geometry|Lamp_ref:head_geo|Lamp_ref:head_geoShape" "pnts[135]" 
-		" -type \"float3\" -6.39672760000000018 25.03618 -1.09608409999999989"
-		2 "|Lamp_ref:Geometry|Lamp_ref:head_geo|Lamp_ref:head_geoShape" "pnts[136]" 
-		" -type \"float3\" -6.76990750000000041 24.946875 -1.2038641000000001"
-		2 "|Lamp_ref:Geometry|Lamp_ref:head_geo|Lamp_ref:head_geoShape" "pnts[137]" 
-		" -type \"float3\" -6.28575939999999989 25.484169 -0.0088138655000000003"
-		2 "|Lamp_ref:Geometry|Lamp_ref:head_geo|Lamp_ref:head_geoShape" "pnts[138]" 
-		" -type \"float3\" -6.60889959999999999 25.255295 -0.0088138655000000003"
-		2 "|Lamp_ref:Geometry|Lamp_ref:head_geo|Lamp_ref:head_geoShape" "pnts[139]" 
-		" -type \"float3\" -7.00311180000000011 25.187712 -0.0088138655000000003"
-		2 "|Lamp_ref:Geometry|Lamp_ref:head_geo|Lamp_ref:head_geoShape" "pnts[140]" 
-		" -type \"float3\" -6.07921309999999959 25.270866 1.04962719999999998"
-		2 "|Lamp_ref:Geometry|Lamp_ref:head_geo|Lamp_ref:head_geoShape" "pnts[141]" 
-		" -type \"float3\" -6.39672760000000018 25.03618 1.07845649999999993"
-		2 "|Lamp_ref:Geometry|Lamp_ref:head_geo|Lamp_ref:head_geoShape" "pnts[142]" 
-		" -type \"float3\" -6.76990750000000041 24.946875 1.18623630000000002"
-		2 "|Lamp_ref:Geometry|Lamp_ref:head_geo|Lamp_ref:head_geoShape" "pnts[143]" 
-		" -type \"float3\" -5.51491790000000037 24.688105 1.82445970000000002"
-		2 "|Lamp_ref:Geometry|Lamp_ref:head_geo|Lamp_ref:head_geoShape" "pnts[144]" 
-		" -type \"float3\" -5.81706289999999981 24.437546 1.8743938"
-		2 "|Lamp_ref:Geometry|Lamp_ref:head_geo|Lamp_ref:head_geoShape" "pnts[145]" 
-		" -type \"float3\" -6.132781 24.288904 2.061075"
-		2 "|Lamp_ref:Geometry|Lamp_ref:head_geo|Lamp_ref:head_geoShape" "pnts[146]" 
-		" -type \"float3\" -4.74407669999999992 23.892044 2.10806819999999995"
-		2 "|Lamp_ref:Geometry|Lamp_ref:head_geo|Lamp_ref:head_geoShape" "pnts[147]" 
-		" -type \"float3\" -5.02522559999999974 23.619802 2.16572640000000005"
-		2 "|Lamp_ref:Geometry|Lamp_ref:head_geo|Lamp_ref:head_geoShape" "pnts[148]" 
-		" -type \"float3\" -5.26244970000000034 23.390095 2.38128640000000003"
-		2 "|Lamp_ref:Geometry|Lamp_ref:head_geo|Lamp_ref:head_geoShape" "pnts[149]" 
-		" -type \"float3\" -3.97323579999999987 23.09598 1.82445970000000002"
-		2 "|Lamp_ref:Geometry|Lamp_ref:head_geo|Lamp_ref:head_geoShape" "pnts[150]" 
-		" -type \"float3\" -4.23338889999999957 22.802055 1.8743938"
-		2 "|Lamp_ref:Geometry|Lamp_ref:head_geo|Lamp_ref:head_geoShape" "pnts[151]" 
-		" -type \"float3\" -4.39211849999999959 22.491285 2.061075"
-		2 "|Lamp_ref:Geometry|Lamp_ref:head_geo|Lamp_ref:head_geoShape" "pnts[152]" 
-		" -type \"float3\" -3.408941 22.513222 1.04962719999999998"
-		2 "|Lamp_ref:Geometry|Lamp_ref:head_geo|Lamp_ref:head_geoShape" "pnts[153]" 
-		" -type \"float3\" -3.6537234999999999 22.203424 1.07845649999999993"
-		2 "|Lamp_ref:Geometry|Lamp_ref:head_geo|Lamp_ref:head_geoShape" "pnts[154]" 
-		" -type \"float3\" -3.75499150000000004 21.833315 1.18623630000000002"
-		2 "|Lamp_ref:Geometry|Lamp_ref:head_geo|Lamp_ref:head_geoShape" "pnts[155]" 
-		" -type \"float3\" -3.202395 22.299915 -0.0088138655000000003"
-		2 "|Lamp_ref:Geometry|Lamp_ref:head_geo|Lamp_ref:head_geoShape" "pnts[156]" 
-		" -type \"float3\" -3.44155170000000021 21.984312 -0.0088138655000000003"
-		2 "|Lamp_ref:Geometry|Lamp_ref:head_geo|Lamp_ref:head_geoShape" "pnts[157]" 
-		" -type \"float3\" -3.52178760000000013 21.592476 -0.0088138655000000003"
-		2 "|Lamp_ref:Geometry|Lamp_ref:head_geo|Lamp_ref:head_geoShape" "pnts[158]" 
-		" -type \"float3\" -3.46288010000000002 22.567076 -1.02522639999999998"
-		2 "|Lamp_ref:Geometry|Lamp_ref:head_geo|Lamp_ref:head_geoShape" "pnts[159]" 
-		" -type \"float3\" -3.70431020000000011 22.255663 -1.05598149999999991"
-		2 "|Lamp_ref:Geometry|Lamp_ref:head_geo|Lamp_ref:head_geoShape" "pnts[160]" 
-		" -type \"float3\" -3.80740880000000015 21.88653 -1.1626723000000001"
-		2 "|Lamp_ref:Geometry|Lamp_ref:head_geo|Lamp_ref:head_geoShape" "pnts[161]" 
-		" -type \"float3\" -4.422575 22.521824 -2.00735619999999981"
-		2 "|Lamp_ref:Geometry|Lamp_ref:head_geo|Lamp_ref:head_geoShape" "pnts[162]" 
-		" -type \"float3\" -4.26259419999999967 22.832218 -1.82256189999999996"
-		2 "|Lamp_ref:Geometry|Lamp_ref:head_geo|Lamp_ref:head_geoShape" "pnts[163]" 
-		" -type \"float3\" -4.00476839999999967 23.126694 -1.76929259999999999"
-		2 "|Lamp_ref:Geometry|Lamp_ref:head_geo|Lamp_ref:head_geoShape" "pnts[164]" 
-		" -type \"float3\" -5.262907 23.389652 -2.31653090000000006"
-		2 "|Lamp_ref:Geometry|Lamp_ref:head_geo|Lamp_ref:head_geoShape" "pnts[165]" 
-		" -type \"float3\" -5.02522559999999974 23.619802 -2.10314919999999983"
-		2 "|Lamp_ref:Geometry|Lamp_ref:head_geo|Lamp_ref:head_geoShape" "pnts[166]" 
-		" -type \"float3\" -4.74500079999999969 23.891148 -2.04163929999999993"
-		2 "|Lamp_ref:Geometry|Lamp_ref:head_geo|Lamp_ref:head_geoShape" "pnts[167]" 
-		" -type \"float3\" -6.1032390999999997 24.257479 -2.00735619999999981"
-		2 "|Lamp_ref:Geometry|Lamp_ref:head_geo|Lamp_ref:head_geoShape" "pnts[168]" 
-		" -type \"float3\" -5.78785710000000009 24.407387 -1.82256189999999996"
-		2 "|Lamp_ref:Geometry|Lamp_ref:head_geo|Lamp_ref:head_geoShape" "pnts[169]" 
-		" -type \"float3\" -5.4852337999999996 24.655602 -1.76929259999999999"
-		2 "|Lamp_ref:Geometry|Lamp_ref:head_geo|Lamp_ref:head_geoShape" "pnts[170]" 
-		" -type \"float3\" -6.7184052000000003 24.892773 -1.1626723000000001"
-		2 "|Lamp_ref:Geometry|Lamp_ref:head_geo|Lamp_ref:head_geoShape" "pnts[171]" 
-		" -type \"float3\" -6.34614130000000021 24.983938 -1.05598149999999991"
-		2 "|Lamp_ref:Geometry|Lamp_ref:head_geo|Lamp_ref:head_geoShape" "pnts[172]" 
-		" -type \"float3\" -6.027123 25.215219 -1.02522639999999998"
-		2 "|Lamp_ref:Geometry|Lamp_ref:head_geo|Lamp_ref:head_geoShape" "pnts[173]" 
-		" -type \"float3\" -6.94357109999999977 25.125305 -0.0088138655000000003"
-		2 "|Lamp_ref:Geometry|Lamp_ref:head_geo|Lamp_ref:head_geoShape" "pnts[174]" 
-		" -type \"float3\" -6.550487 25.194971 -0.0088138655000000003"
-		2 "|Lamp_ref:Geometry|Lamp_ref:head_geo|Lamp_ref:head_geoShape" "pnts[175]" 
-		" -type \"float3\" -6.22546670000000013 25.420055 -0.0088138655000000003"
-		2 "|Lamp_ref:Geometry|Lamp_ref:head_geo|Lamp_ref:head_geoShape" "pnts[176]" 
-		" -type \"float3\" -6.7184052000000003 24.892773 1.14504469999999992"
-		2 "|Lamp_ref:Geometry|Lamp_ref:head_geo|Lamp_ref:head_geoShape" "pnts[177]" 
-		" -type \"float3\" -6.34614130000000021 24.983938 1.03835370000000005"
-		2 "|Lamp_ref:Geometry|Lamp_ref:head_geo|Lamp_ref:head_geoShape" "pnts[178]" 
-		" -type \"float3\" -6.027123 25.215219 1.007599"
-		2 "|Lamp_ref:Geometry|Lamp_ref:head_geo|Lamp_ref:head_geoShape" "pnts[179]" 
-		" -type \"float3\" -6.1032390999999997 24.257479 1.98972879999999996"
-		2 "|Lamp_ref:Geometry|Lamp_ref:head_geo|Lamp_ref:head_geoShape" "pnts[180]" 
-		" -type \"float3\" -5.78785710000000009 24.407387 1.80493389999999998"
-		2 "|Lamp_ref:Geometry|Lamp_ref:head_geo|Lamp_ref:head_geoShape" "pnts[181]" 
-		" -type \"float3\" -5.4852337999999996 24.655602 1.75166519999999992"
-		2 "|Lamp_ref:Geometry|Lamp_ref:head_geo|Lamp_ref:head_geoShape" "pnts[182]" 
-		" -type \"float3\" -5.262907 23.389652 2.29890280000000002"
-		2 "|Lamp_ref:Geometry|Lamp_ref:head_geo|Lamp_ref:head_geoShape" "pnts[183]" 
-		" -type \"float3\" -5.02522559999999974 23.619802 2.08552120000000007"
-		2 "|Lamp_ref:Geometry|Lamp_ref:head_geo|Lamp_ref:head_geoShape" "pnts[184]" 
-		" -type \"float3\" -4.74500079999999969 23.891148 2.02401110000000006"
-		2 "|Lamp_ref:Geometry|Lamp_ref:head_geo|Lamp_ref:head_geoShape" "pnts[185]" 
-		" -type \"float3\" -4.422575 22.521824 1.98972879999999996"
-		2 "|Lamp_ref:Geometry|Lamp_ref:head_geo|Lamp_ref:head_geoShape" "pnts[186]" 
-		" -type \"float3\" -4.26259419999999967 22.832218 1.80493389999999998"
-		2 "|Lamp_ref:Geometry|Lamp_ref:head_geo|Lamp_ref:head_geoShape" "pnts[187]" 
-		" -type \"float3\" -4.00476839999999967 23.126694 1.75166519999999992"
-		2 "|Lamp_ref:Geometry|Lamp_ref:head_geo|Lamp_ref:head_geoShape" "pnts[188]" 
-		" -type \"float3\" -3.80740880000000015 21.88653 1.14504469999999992"
-		2 "|Lamp_ref:Geometry|Lamp_ref:head_geo|Lamp_ref:head_geoShape" "pnts[189]" 
-		" -type \"float3\" -3.70431020000000011 22.255663 1.03835370000000005"
-		2 "|Lamp_ref:Geometry|Lamp_ref:head_geo|Lamp_ref:head_geoShape" "pnts[190]" 
-		" -type \"float3\" -3.46288010000000002 22.567076 1.007599"
-		2 "|Lamp_ref:Geometry|Lamp_ref:head_geo|Lamp_ref:head_geoShape" "pnts[191]" 
-		" -type \"float3\" -3.58224339999999986 21.653997 -0.0088138655000000003"
-		2 "|Lamp_ref:Geometry|Lamp_ref:head_geo|Lamp_ref:head_geoShape" "pnts[192]" 
-		" -type \"float3\" -3.49996380000000018 22.044634 -0.0088138655000000003"
-		2 "|Lamp_ref:Geometry|Lamp_ref:head_geo|Lamp_ref:head_geoShape" "pnts[193]" 
-		" -type \"float3\" -3.2645354000000002 22.362242 -0.0088138655000000003"
-		2 "|Lamp_ref:Geometry|Lamp_ref:head_geo|Lamp_ref:head_geoShape" "pnts[194]" 
-		" -type \"float3\" -3.25756740000000011 25.331455 1.80321320000000007"
-		2 "|Lamp_ref:Geometry|Lamp_ref:head_geo|Lamp_ref:head_geoShape" "pnts[195]" 
-		" -type \"float3\" -3.9173988999999998 26.012877 1.56044809999999989"
-		2 "|Lamp_ref:Geometry|Lamp_ref:head_geo|Lamp_ref:head_geoShape" "pnts[196]" 
-		" -type \"float3\" -4.4004291999999996 26.511713 0.89719974999999996"
-		2 "|Lamp_ref:Geometry|Lamp_ref:head_geo|Lamp_ref:head_geoShape" "pnts[197]" 
-		" -type \"float3\" -4.57722949999999962 26.694298 -0.0088138188999999992"
-		2 "|Lamp_ref:Geometry|Lamp_ref:head_geo|Lamp_ref:head_geoShape" "pnts[198]" 
-		" -type \"float3\" -4.4004291999999996 26.511713 -0.91482735000000004"
-		2 "|Lamp_ref:Geometry|Lamp_ref:head_geo|Lamp_ref:head_geoShape" "pnts[199]" 
-		" -type \"float3\" -3.9173988999999998 26.012877 -1.57807579999999992"
-		2 "|Lamp_ref:Geometry|Lamp_ref:head_geo|Lamp_ref:head_geoShape" "pnts[200]" 
-		" -type \"float3\" -3.25756740000000011 25.331455 -1.820841"
-		2 "|Lamp_ref:Geometry|Lamp_ref:head_geo|Lamp_ref:head_geoShape" "pnts[201]" 
-		" -type \"float3\" -2.5977361000000001 24.650034 -1.57807579999999992"
-		2 "|Lamp_ref:Geometry|Lamp_ref:head_geo|Lamp_ref:head_geoShape" "pnts[202]" 
-		" -type \"float3\" -2.11470579999999986 24.151201 -0.91482735000000004"
-		2 "|Lamp_ref:Geometry|Lamp_ref:head_geo|Lamp_ref:head_geoShape" "pnts[203]" 
-		" -type \"float3\" -1.93790459999999998 23.968613 -0.0088138188999999992"
-		2 "|Lamp_ref:Geometry|Lamp_ref:head_geo|Lamp_ref:head_geoShape" "pnts[204]" 
-		" -type \"float3\" -2.11470579999999986 24.151201 0.89719974999999996"
-		2 "|Lamp_ref:Geometry|Lamp_ref:head_geo|Lamp_ref:head_geoShape" "pnts[205]" 
-		" -type \"float3\" -2.5977361000000001 24.650034 1.56044809999999989"
+		2 "|Lamp_ref:Geometry|Lamp_ref:head_geo|Lamp_ref:head_geoShape" "pt[0:165]" 
+		(" -type \"float3\" -1.7907305 26.751818 -0.0088138655000000003 -4.75385759999999991 18.182074 -2.26720310000000014 -5.95789149999999967 19.425503 -3.9204604999999999 -7.60263060000000035 21.124058 -4.52559190000000022 -9.24736979999999953 22.822613 -3.9204604999999999 -10.451404 24.066044 -2.26720310000000014 -10.892109 24.521168 -0.0088138188999999992 -10.451404 24.066044 2.24957539999999989 -9.24736979999999953 22.822613 3.90283269999999982 -7.60263060000000035 21.124058 4.50796460000000021 -5.95789149999999967 19.425503 3.90283269999999982 -4.75385759999999991 18.182074 2.24957539999999989 -4.31315179999999998 17.726948 -0.0088138188999999992 -4.82124810000000004 18.251667 -2.21377990000000002 -5.9968003999999997 19.465681 -3.82792850000000007 -7.602633 21.124054 -4.41874549999999999 -9.20846369999999936 22.782431 -3.82792850000000007 -10.384017 23.996447 -2.21377990000000002 -10.814297 24.440805 -0.0088138188999999992 -10.384017 23.996447 2.19615220000000022 -9.20846369999999936 22.782431 3.81030079999999982"
+		+ " -7.602633 21.124054 4.40111830000000026 -5.9968003999999997 19.465681 3.81030079999999982 -4.82124810000000004 18.251667 2.19615220000000022 -4.39096740000000008 17.807306 -0.0088138188999999992 -2.1931579000000001 26.362143 -0.0088138655000000003 -0.92676765000000005 25.859587 -0.69372785000000003 -0.83731239999999996 25.767204 -0.76464449999999995 -0.92637192999999995 25.655149 -0.77487218000000002 -1.29192109999999993 26.236689 -1.19511959999999995 -1.24027419999999999 26.18335 -1.31795069999999992 -1.33478619999999992 26.076927 -1.33566589999999996 -1.7907305 26.751818 -1.378642 -1.7907305 26.751818 -1.52047510000000008 -1.89269130000000008 26.653088 -1.54093049999999998 -2.2895395999999999 27.266947 -1.19511959999999995 -2.34118650000000006 27.320286 -1.31795069999999992 -2.45059609999999983 27.229248 -1.33566589999999996 -2.65469309999999981 27.644051 -0.69372785000000003 -2.7441485000000001 27.736433 -0.76464449999999995 -2.85901089999999991 27.651026 -0.77487218000000002 -2.78834869999999979 27.78207"
+		+ "8 -0.0088138655000000003 -2.89164280000000007 27.888752 -0.0088138655000000003 -3.00850110000000015 27.805405 -0.0088138655000000003 -2.65469309999999981 27.644051 0.67610031000000004 -2.7441485000000001 27.736433 0.74701673000000002 -2.85901089999999991 27.651026 0.75724477000000001 -2.2895395999999999 27.266947 1.17749210000000004 -2.34118650000000006 27.320286 1.30032309999999995 -2.45059609999999983 27.229248 1.3180381000000001 -1.7907305 26.751818 1.36101420000000006 -1.7907305 26.751818 1.50284770000000001 -1.89269130000000008 26.653088 1.52330290000000002 -1.29192109999999993 26.236689 1.17749210000000004 -1.24027419999999999 26.18335 1.30032309999999995 -1.33478619999999992 26.076927 1.3180381000000001 -0.92676765000000005 25.859587 0.67610031000000004 -0.83731239999999996 25.767204 0.74701673000000002 -0.92637192999999995 25.655149 0.75724477000000001 -0.79311222000000003 25.72156 -0.0088138655000000003 -0.68981791000000003 25.614885 -0.0088138655000000003 -0.77688146000000002 25.500767 -0.0088138655"
+		+ "000000003 -1.29800929999999992 25.573507 -0.66464835 -1.19855890000000009 25.485891 -0.73751074000000005 -1.28976979999999997 25.370085 -0.74840081000000003 -1.64765969999999995 25.934599 -1.14475269999999996 -1.58705439999999998 25.8871 -1.27095390000000008 -1.68407130000000005 25.777287 -1.28981609999999991 -2.12529089999999998 26.427858 -1.32048290000000001 -2.11774970000000007 26.435158 -1.46620759999999994 -2.22269769999999989 26.333538 -1.48798760000000008 -2.6029217 26.921118 -1.14475269999999996 -2.64844539999999995 26.983219 -1.27095390000000008 -2.76132389999999983 26.889786 -1.28981609999999991 -2.95257209999999981 27.282207 -0.66464835 -3.03694109999999995 27.384424 -0.73751074000000005 -3.15562580000000015 27.296989 -0.74840081000000003 -3.08055279999999998 27.414375 -0.0088138655000000003 -3.17914079999999988 27.531279 -0.0088138655000000003 -3.29995040000000017 27.446035 -0.0088138655000000003 -2.95257209999999981 27.282207 0.64702051999999999 -3.03694109999999995 27.384424 0.71988337999999996 "
+		+ "-3.15562580000000015 27.296989 0.73077291 -2.6029217 26.921118 1.12712509999999999 -2.64844539999999995 26.983219 1.25332629999999989 -2.76132389999999983 26.889786 1.27218830000000005 -2.12529089999999998 26.427858 1.30285530000000005 -2.11774970000000007 26.435158 1.44858010000000004 -2.22269769999999989 26.333538 1.47035990000000005 -1.64765969999999995 25.934599 1.12712509999999999 -1.58705439999999998 25.8871 1.25332629999999989 -1.68407130000000005 25.777287 1.27218830000000005 -1.29800929999999992 25.573507 0.64702051999999999 -1.19855890000000009 25.485891 0.71988337999999996 -1.28976979999999997 25.370085 0.73077291 -1.17002859999999997 25.441339 -0.0088138655000000003 -1.05635919999999994 25.339039 -0.0088138655000000003 -1.14544519999999994 25.221039 -0.0088138655000000003 -10.401796 24.077747 2.23518250000000007 -10.839693 24.529974 -0.0088138188999999992 -10.401796 24.077747 -2.25281049999999983 -9.20543580000000006 22.842243 -3.89553169999999982 -7.57117839999999998 21.154514 -4.4968066000000002"
+		+ "1 -5.9369215999999998 19.466784 -3.89553169999999982 -4.74056009999999972 18.231277 -2.25281049999999983 -4.30266380000000037 17.779053 -0.0088138188999999992 -4.74056009999999972 18.231277 2.23518250000000007 -5.9369215999999998 19.466784 3.87790390000000018 -7.57117839999999998 21.154514 4.47917939999999959 -9.20543580000000006 22.842243 3.87790390000000018 -10.319714 24.010836 2.17718409999999984 -10.746291 24.45137 -0.0088138188999999992 -10.319714 24.010836 -2.19481180000000009 -9.154273 22.807261 -3.79507489999999992 -7.56225539999999974 21.163153 -4.38080979999999975 -5.97023729999999997 19.519045 -3.79507489999999992 -4.80479810000000018 18.315474 -2.19481180000000009 -4.37821869999999969 17.874935 -0.0088138188999999992 -4.80479810000000018 18.315474 2.17718409999999984 -5.97023729999999997 19.519045 3.77744720000000012 -7.56225539999999974 21.163153 4.36318249999999974 -9.154273 22.807261 3.77744720000000012 -3.75499150000000004 21.833315 -1.2038641000000001 -3.6537234999999999 22.203424 -1.09608409"
+		+ "999999989 -3.408941 22.513222 -1.06725469999999989 -3.97323579999999987 23.09598 -1.842088 -4.23338889999999957 22.802055 -1.89202139999999996 -4.39211849999999959 22.491285 -2.07870240000000006 -4.74407669999999992 23.892044 -2.12569570000000008 -5.02522559999999974 23.619802 -2.18335409999999985 -5.26244970000000034 23.390095 -2.3989145999999999 -5.51491790000000037 24.688105 -1.842088 -5.81706289999999981 24.437546 -1.89202139999999996 -6.132781 24.288904 -2.07870240000000006 -6.07921309999999959 25.270866 -1.06725469999999989 -6.39672760000000018 25.03618 -1.09608409999999989 -6.76990750000000041 24.946875 -1.2038641000000001 -6.28575939999999989 25.484169 -0.0088138655000000003 -6.60889959999999999 25.255295 -0.0088138655000000003 -7.00311180000000011 25.187712 -0.0088138655000000003 -6.07921309999999959 25.270866 1.04962719999999998 -6.39672760000000018 25.03618 1.07845649999999993 -6.76990750000000041 24.946875 1.18623630000000002 -5.51491790000000037 24.688105 1.82445970000000002 -5.81706289999999981 "
+		+ "24.437546 1.8743938 -6.132781 24.288904 2.061075 -4.74407669999999992 23.892044 2.10806819999999995 -5.02522559999999974 23.619802 2.16572640000000005 -5.26244970000000034 23.390095 2.38128640000000003 -3.97323579999999987 23.09598 1.82445970000000002 -4.23338889999999957 22.802055 1.8743938 -4.39211849999999959 22.491285 2.061075 -3.408941 22.513222 1.04962719999999998 -3.6537234999999999 22.203424 1.07845649999999993 -3.75499150000000004 21.833315 1.18623630000000002 -3.202395 22.299915 -0.0088138655000000003 -3.44155170000000021 21.984312 -0.0088138655000000003 -3.52178760000000013 21.592476 -0.0088138655000000003 -3.46288010000000002 22.567076 -1.02522639999999998 -3.70431020000000011 22.255663 -1.05598149999999991 -3.80740880000000015 21.88653 -1.1626723000000001 -4.422575 22.521824 -2.00735619999999981 -4.26259419999999967 22.832218 -1.82256189999999996 -4.00476839999999967 23.126694 -1.76929259999999999 -5.262907 23.389652 -2.31653090000000006 -5.02522559999999974 23.619802 -2.10314919999999983"
+		)
+		2 "|Lamp_ref:Geometry|Lamp_ref:head_geo|Lamp_ref:head_geoShape" "pt[166:205]" 
+		(" -4.74500079999999969 23.891148 -2.04163929999999993 -6.1032390999999997 24.257479 -2.00735619999999981 -5.78785710000000009 24.407387 -1.82256189999999996 -5.4852337999999996 24.655602 -1.76929259999999999 -6.7184052000000003 24.892773 -1.1626723000000001 -6.34614130000000021 24.983938 -1.05598149999999991 -6.027123 25.215219 -1.02522639999999998 -6.94357109999999977 25.125305 -0.0088138655000000003 -6.550487 25.194971 -0.0088138655000000003 -6.22546670000000013 25.420055 -0.0088138655000000003 -6.7184052000000003 24.892773 1.14504469999999992 -6.34614130000000021 24.983938 1.03835370000000005 -6.027123 25.215219 1.007599 -6.1032390999999997 24.257479 1.98972879999999996 -5.78785710000000009 24.407387 1.80493389999999998 -5.4852337999999996 24.655602 1.75166519999999992 -5.262907 23.389652 2.29890280000000002 -5.02522559999999974 23.619802 2.08552120000000007 -4.74500079999999969 23.891148 2.02401110000000006 -4.422575 22.521824 1.98972879999999996 -4.26259419999999967 22.832218 1.80493389999999998 -4.004768"
+		+ "39999999967 23.126694 1.75166519999999992 -3.80740880000000015 21.88653 1.14504469999999992 -3.70431020000000011 22.255663 1.03835370000000005 -3.46288010000000002 22.567076 1.007599 -3.58224339999999986 21.653997 -0.0088138655000000003 -3.49996380000000018 22.044634 -0.0088138655000000003 -3.2645354000000002 22.362242 -0.0088138655000000003 -3.25756740000000011 25.331455 1.80321320000000007 -3.9173988999999998 26.012877 1.56044809999999989 -4.4004291999999996 26.511713 0.89719974999999996 -4.57722949999999962 26.694298 -0.0088138188999999992 -4.4004291999999996 26.511713 -0.91482735000000004 -3.9173988999999998 26.012877 -1.57807579999999992 -3.25756740000000011 25.331455 -1.820841 -2.5977361000000001 24.650034 -1.57807579999999992 -2.11470579999999986 24.151201 -0.91482735000000004 -1.93790459999999998 23.968613 -0.0088138188999999992 -2.11470579999999986 24.151201 0.89719974999999996 -2.5977361000000001 24.650034 1.56044809999999989"
+		)
 		2 "Lamp_ref:geo_layer" "displayType" " 1"
+		3 "Lamp_ref:groupParts1.outputGeometry" "|Lamp_ref:Geometry|Lamp_ref:base_geo|Lamp_ref:base_geoShape.inMesh" 
+		""
 		3 "Lamp_ref:groupParts4.outputGeometry" "|Lamp_ref:Geometry|Lamp_ref:lower_arm_geo|Lamp_ref:lower_arm_geoShape.inMesh" 
 		""
 		3 "Lamp_ref:groupParts7.outputGeometry" "|Lamp_ref:Geometry|Lamp_ref:upper_arm_geo|Lamp_ref:upper_arm_geoShape.inMesh" 
-		""
-		3 "Lamp_ref:groupParts1.outputGeometry" "|Lamp_ref:Geometry|Lamp_ref:base_geo|Lamp_ref:base_geoShape.inMesh" 
 		""
 		5 4 "Lamp_refRN" "|Lamp_ref:Geometry|Lamp_ref:base_geo|Lamp_ref:base_geoShape.inMesh" 
 		"Lamp_refRN.placeHolderList[1]" ""
@@ -4543,19 +4145,19 @@ createNode script -n "uiConfigurationScriptNode";
 	rename -uid "A6C599BE-492B-E04F-CC39-E6B32518724A";
 	setAttr ".b" -type "string" (
 		"// Maya Mel UI Configuration File.\n//\n//  This script is machine generated.  Edit at your own risk.\n//\n//\n\nglobal string $gMainPane;\nif (`paneLayout -exists $gMainPane`) {\n\n\tglobal int $gUseScenePanelConfig;\n\tint    $useSceneConfig = $gUseScenePanelConfig;\n\tint    $menusOkayInPanels = `optionVar -q allowMenusInPanels`;\tint    $nVisPanes = `paneLayout -q -nvp $gMainPane`;\n\tint    $nPanes = 0;\n\tstring $editorName;\n\tstring $panelName;\n\tstring $itemFilterName;\n\tstring $panelConfig;\n\n\t//\n\t//  get current state of the UI\n\t//\n\tsceneUIReplacement -update $gMainPane;\n\n\t$panelName = `sceneUIReplacement -getNextPanel \"modelPanel\" (localizedPanelLabel(\"Top View\")) `;\n\tif (\"\" != $panelName) {\n\t\t$label = `panel -q -label $panelName`;\n\t\tmodelPanel -edit -l (localizedPanelLabel(\"Top View\")) -mbv $menusOkayInPanels  $panelName;\n\t\t$editorName = $panelName;\n        modelEditor -e \n            -camera \"top\" \n            -useInteractiveMode 0\n            -displayLights \"default\" \n            -displayAppearance \"smoothShaded\" \n            -activeOnly 0\n"
-		+ "            -ignorePanZoom 0\n            -wireframeOnShaded 0\n            -headsUpDisplay 1\n            -holdOuts 1\n            -selectionHiliteDisplay 1\n            -useDefaultMaterial 0\n            -bufferMode \"double\" \n            -twoSidedLighting 0\n            -backfaceCulling 0\n            -xray 0\n            -jointXray 0\n            -activeComponentsXray 0\n            -displayTextures 0\n            -smoothWireframe 0\n            -lineWidth 1\n            -textureAnisotropic 0\n            -textureHilight 1\n            -textureSampling 2\n            -textureDisplay \"modulate\" \n            -textureMaxSize 32768\n            -fogging 0\n            -fogSource \"fragment\" \n            -fogMode \"linear\" \n            -fogStart 0\n            -fogEnd 100\n            -fogDensity 0.1\n            -fogColor 0.5 0.5 0.5 1 \n            -depthOfFieldPreview 1\n            -maxConstantTransparency 1\n            -rendererName \"vp2Renderer\" \n            -objectFilterShowInHUD 1\n            -isFiltered 0\n            -colorResolution 256 256 \n"
+		+ "            -ignorePanZoom 0\n            -wireframeOnShaded 0\n            -headsUpDisplay 1\n            -holdOuts 1\n            -selectionHiliteDisplay 1\n            -useDefaultMaterial 0\n            -bufferMode \"double\" \n            -twoSidedLighting 0\n            -backfaceCulling 0\n            -xray 0\n            -jointXray 0\n            -activeComponentsXray 0\n            -displayTextures 0\n            -smoothWireframe 0\n            -lineWidth 1\n            -textureAnisotropic 0\n            -textureHilight 1\n            -textureSampling 2\n            -textureDisplay \"modulate\" \n            -textureMaxSize 16384\n            -fogging 0\n            -fogSource \"fragment\" \n            -fogMode \"linear\" \n            -fogStart 0\n            -fogEnd 100\n            -fogDensity 0.1\n            -fogColor 0.5 0.5 0.5 1 \n            -depthOfFieldPreview 1\n            -maxConstantTransparency 1\n            -rendererName \"vp2Renderer\" \n            -objectFilterShowInHUD 1\n            -isFiltered 0\n            -colorResolution 256 256 \n"
 		+ "            -bumpResolution 512 512 \n            -textureCompression 0\n            -transparencyAlgorithm \"frontAndBackCull\" \n            -transpInShadows 0\n            -cullingOverride \"none\" \n            -lowQualityLighting 0\n            -maximumNumHardwareLights 1\n            -occlusionCulling 0\n            -shadingModel 0\n            -useBaseRenderer 0\n            -useReducedRenderer 0\n            -smallObjectCulling 0\n            -smallObjectThreshold -1 \n            -interactiveDisableShadows 0\n            -interactiveBackFaceCull 0\n            -sortTransparent 1\n            -controllers 1\n            -nurbsCurves 1\n            -nurbsSurfaces 1\n            -polymeshes 1\n            -subdivSurfaces 1\n            -planes 1\n            -lights 1\n            -cameras 1\n            -controlVertices 1\n            -hulls 1\n            -grid 1\n            -imagePlane 1\n            -joints 1\n            -ikHandles 1\n            -deformers 1\n            -dynamics 1\n            -particleInstancers 1\n            -fluids 1\n"
 		+ "            -hairSystems 1\n            -follicles 1\n            -nCloths 1\n            -nParticles 1\n            -nRigids 1\n            -dynamicConstraints 1\n            -locators 1\n            -manipulators 1\n            -pluginShapes 1\n            -dimensions 1\n            -handles 1\n            -pivots 1\n            -textures 1\n            -strokes 1\n            -motionTrails 1\n            -clipGhosts 1\n            -greasePencils 1\n            -shadows 0\n            -captureSequenceNumber -1\n            -width 1\n            -height 1\n            -sceneRenderFilter 0\n            $editorName;\n        modelEditor -e -viewSelected 0 $editorName;\n\t\tif (!$useSceneConfig) {\n\t\t\tpanel -e -l $label $panelName;\n\t\t}\n\t}\n\n\n\t$panelName = `sceneUIReplacement -getNextPanel \"modelPanel\" (localizedPanelLabel(\"Side View\")) `;\n\tif (\"\" != $panelName) {\n\t\t$label = `panel -q -label $panelName`;\n\t\tmodelPanel -edit -l (localizedPanelLabel(\"Side View\")) -mbv $menusOkayInPanels  $panelName;\n\t\t$editorName = $panelName;\n        modelEditor -e \n"
-		+ "            -camera \"side\" \n            -useInteractiveMode 0\n            -displayLights \"default\" \n            -displayAppearance \"smoothShaded\" \n            -activeOnly 0\n            -ignorePanZoom 0\n            -wireframeOnShaded 0\n            -headsUpDisplay 1\n            -holdOuts 1\n            -selectionHiliteDisplay 1\n            -useDefaultMaterial 0\n            -bufferMode \"double\" \n            -twoSidedLighting 0\n            -backfaceCulling 0\n            -xray 0\n            -jointXray 0\n            -activeComponentsXray 0\n            -displayTextures 0\n            -smoothWireframe 0\n            -lineWidth 1\n            -textureAnisotropic 0\n            -textureHilight 1\n            -textureSampling 2\n            -textureDisplay \"modulate\" \n            -textureMaxSize 32768\n            -fogging 0\n            -fogSource \"fragment\" \n            -fogMode \"linear\" \n            -fogStart 0\n            -fogEnd 100\n            -fogDensity 0.1\n            -fogColor 0.5 0.5 0.5 1 \n            -depthOfFieldPreview 1\n"
+		+ "            -camera \"side\" \n            -useInteractiveMode 0\n            -displayLights \"default\" \n            -displayAppearance \"smoothShaded\" \n            -activeOnly 0\n            -ignorePanZoom 0\n            -wireframeOnShaded 0\n            -headsUpDisplay 1\n            -holdOuts 1\n            -selectionHiliteDisplay 1\n            -useDefaultMaterial 0\n            -bufferMode \"double\" \n            -twoSidedLighting 0\n            -backfaceCulling 0\n            -xray 0\n            -jointXray 0\n            -activeComponentsXray 0\n            -displayTextures 0\n            -smoothWireframe 0\n            -lineWidth 1\n            -textureAnisotropic 0\n            -textureHilight 1\n            -textureSampling 2\n            -textureDisplay \"modulate\" \n            -textureMaxSize 16384\n            -fogging 0\n            -fogSource \"fragment\" \n            -fogMode \"linear\" \n            -fogStart 0\n            -fogEnd 100\n            -fogDensity 0.1\n            -fogColor 0.5 0.5 0.5 1 \n            -depthOfFieldPreview 1\n"
 		+ "            -maxConstantTransparency 1\n            -rendererName \"vp2Renderer\" \n            -objectFilterShowInHUD 1\n            -isFiltered 0\n            -colorResolution 256 256 \n            -bumpResolution 512 512 \n            -textureCompression 0\n            -transparencyAlgorithm \"frontAndBackCull\" \n            -transpInShadows 0\n            -cullingOverride \"none\" \n            -lowQualityLighting 0\n            -maximumNumHardwareLights 1\n            -occlusionCulling 0\n            -shadingModel 0\n            -useBaseRenderer 0\n            -useReducedRenderer 0\n            -smallObjectCulling 0\n            -smallObjectThreshold -1 \n            -interactiveDisableShadows 0\n            -interactiveBackFaceCull 0\n            -sortTransparent 1\n            -controllers 1\n            -nurbsCurves 1\n            -nurbsSurfaces 1\n            -polymeshes 1\n            -subdivSurfaces 1\n            -planes 1\n            -lights 1\n            -cameras 1\n            -controlVertices 1\n            -hulls 1\n            -grid 1\n"
 		+ "            -imagePlane 1\n            -joints 1\n            -ikHandles 1\n            -deformers 1\n            -dynamics 1\n            -particleInstancers 1\n            -fluids 1\n            -hairSystems 1\n            -follicles 1\n            -nCloths 1\n            -nParticles 1\n            -nRigids 1\n            -dynamicConstraints 1\n            -locators 1\n            -manipulators 1\n            -pluginShapes 1\n            -dimensions 1\n            -handles 1\n            -pivots 1\n            -textures 1\n            -strokes 1\n            -motionTrails 1\n            -clipGhosts 1\n            -greasePencils 1\n            -shadows 0\n            -captureSequenceNumber -1\n            -width 1\n            -height 1\n            -sceneRenderFilter 0\n            $editorName;\n        modelEditor -e -viewSelected 0 $editorName;\n\t\tif (!$useSceneConfig) {\n\t\t\tpanel -e -l $label $panelName;\n\t\t}\n\t}\n\n\n\t$panelName = `sceneUIReplacement -getNextPanel \"modelPanel\" (localizedPanelLabel(\"Front View\")) `;\n\tif (\"\" != $panelName) {\n"
-		+ "\t\t$label = `panel -q -label $panelName`;\n\t\tmodelPanel -edit -l (localizedPanelLabel(\"Front View\")) -mbv $menusOkayInPanels  $panelName;\n\t\t$editorName = $panelName;\n        modelEditor -e \n            -camera \"persp\" \n            -useInteractiveMode 0\n            -displayLights \"default\" \n            -displayAppearance \"smoothShaded\" \n            -activeOnly 0\n            -ignorePanZoom 0\n            -wireframeOnShaded 0\n            -headsUpDisplay 1\n            -holdOuts 1\n            -selectionHiliteDisplay 1\n            -useDefaultMaterial 0\n            -bufferMode \"double\" \n            -twoSidedLighting 0\n            -backfaceCulling 0\n            -xray 0\n            -jointXray 0\n            -activeComponentsXray 0\n            -displayTextures 0\n            -smoothWireframe 0\n            -lineWidth 1\n            -textureAnisotropic 0\n            -textureHilight 1\n            -textureSampling 2\n            -textureDisplay \"modulate\" \n            -textureMaxSize 32768\n            -fogging 0\n            -fogSource \"fragment\" \n"
+		+ "\t\t$label = `panel -q -label $panelName`;\n\t\tmodelPanel -edit -l (localizedPanelLabel(\"Front View\")) -mbv $menusOkayInPanels  $panelName;\n\t\t$editorName = $panelName;\n        modelEditor -e \n            -camera \"persp\" \n            -useInteractiveMode 0\n            -displayLights \"default\" \n            -displayAppearance \"smoothShaded\" \n            -activeOnly 0\n            -ignorePanZoom 0\n            -wireframeOnShaded 0\n            -headsUpDisplay 1\n            -holdOuts 1\n            -selectionHiliteDisplay 1\n            -useDefaultMaterial 0\n            -bufferMode \"double\" \n            -twoSidedLighting 0\n            -backfaceCulling 0\n            -xray 0\n            -jointXray 0\n            -activeComponentsXray 0\n            -displayTextures 0\n            -smoothWireframe 0\n            -lineWidth 1\n            -textureAnisotropic 0\n            -textureHilight 1\n            -textureSampling 2\n            -textureDisplay \"modulate\" \n            -textureMaxSize 16384\n            -fogging 0\n            -fogSource \"fragment\" \n"
 		+ "            -fogMode \"linear\" \n            -fogStart 0\n            -fogEnd 100\n            -fogDensity 0.1\n            -fogColor 0.5 0.5 0.5 1 \n            -depthOfFieldPreview 1\n            -maxConstantTransparency 1\n            -rendererName \"vp2Renderer\" \n            -objectFilterShowInHUD 1\n            -isFiltered 0\n            -colorResolution 256 256 \n            -bumpResolution 512 512 \n            -textureCompression 0\n            -transparencyAlgorithm \"frontAndBackCull\" \n            -transpInShadows 0\n            -cullingOverride \"none\" \n            -lowQualityLighting 0\n            -maximumNumHardwareLights 1\n            -occlusionCulling 0\n            -shadingModel 0\n            -useBaseRenderer 0\n            -useReducedRenderer 0\n            -smallObjectCulling 0\n            -smallObjectThreshold -1 \n            -interactiveDisableShadows 0\n            -interactiveBackFaceCull 0\n            -sortTransparent 1\n            -controllers 1\n            -nurbsCurves 1\n            -nurbsSurfaces 1\n            -polymeshes 1\n"
-		+ "            -subdivSurfaces 1\n            -planes 1\n            -lights 1\n            -cameras 1\n            -controlVertices 1\n            -hulls 1\n            -grid 1\n            -imagePlane 1\n            -joints 1\n            -ikHandles 1\n            -deformers 1\n            -dynamics 1\n            -particleInstancers 1\n            -fluids 1\n            -hairSystems 1\n            -follicles 1\n            -nCloths 1\n            -nParticles 1\n            -nRigids 1\n            -dynamicConstraints 1\n            -locators 1\n            -manipulators 1\n            -pluginShapes 1\n            -dimensions 1\n            -handles 1\n            -pivots 1\n            -textures 1\n            -strokes 1\n            -motionTrails 1\n            -clipGhosts 1\n            -greasePencils 1\n            -shadows 0\n            -captureSequenceNumber -1\n            -width 955\n            -height 197\n            -sceneRenderFilter 0\n            $editorName;\n        modelEditor -e -viewSelected 0 $editorName;\n\t\tif (!$useSceneConfig) {\n"
+		+ "            -subdivSurfaces 1\n            -planes 1\n            -lights 1\n            -cameras 1\n            -controlVertices 1\n            -hulls 1\n            -grid 1\n            -imagePlane 1\n            -joints 1\n            -ikHandles 1\n            -deformers 1\n            -dynamics 1\n            -particleInstancers 1\n            -fluids 1\n            -hairSystems 1\n            -follicles 1\n            -nCloths 1\n            -nParticles 1\n            -nRigids 1\n            -dynamicConstraints 1\n            -locators 1\n            -manipulators 1\n            -pluginShapes 1\n            -dimensions 1\n            -handles 1\n            -pivots 1\n            -textures 1\n            -strokes 1\n            -motionTrails 1\n            -clipGhosts 1\n            -greasePencils 1\n            -shadows 0\n            -captureSequenceNumber -1\n            -width 1319\n            -height 362\n            -sceneRenderFilter 0\n            $editorName;\n        modelEditor -e -viewSelected 0 $editorName;\n\t\tif (!$useSceneConfig) {\n"
 		+ "\t\t\tpanel -e -l $label $panelName;\n\t\t}\n\t}\n\n\n\t$panelName = `sceneUIReplacement -getNextPanel \"modelPanel\" (localizedPanelLabel(\"Persp View\")) `;\n\tif (\"\" != $panelName) {\n\t\t$label = `panel -q -label $panelName`;\n\t\tmodelPanel -edit -l (localizedPanelLabel(\"Persp View\")) -mbv $menusOkayInPanels  $panelName;\n\t\t$editorName = $panelName;\n        modelEditor -e \n            -camera \"persp\" \n            -useInteractiveMode 0\n            -displayLights \"default\" \n            -displayAppearance \"smoothShaded\" \n            -activeOnly 0\n            -ignorePanZoom 0\n            -wireframeOnShaded 0\n            -headsUpDisplay 1\n            -holdOuts 1\n            -selectionHiliteDisplay 1\n            -useDefaultMaterial 0\n            -bufferMode \"double\" \n            -twoSidedLighting 0\n            -backfaceCulling 0\n            -xray 0\n            -jointXray 0\n            -activeComponentsXray 0\n            -displayTextures 0\n            -smoothWireframe 0\n            -lineWidth 1\n            -textureAnisotropic 0\n            -textureHilight 1\n"
-		+ "            -textureSampling 2\n            -textureDisplay \"modulate\" \n            -textureMaxSize 32768\n            -fogging 0\n            -fogSource \"fragment\" \n            -fogMode \"linear\" \n            -fogStart 0\n            -fogEnd 100\n            -fogDensity 0.1\n            -fogColor 0.5 0.5 0.5 1 \n            -depthOfFieldPreview 1\n            -maxConstantTransparency 1\n            -rendererName \"vp2Renderer\" \n            -objectFilterShowInHUD 1\n            -isFiltered 0\n            -colorResolution 256 256 \n            -bumpResolution 512 512 \n            -textureCompression 0\n            -transparencyAlgorithm \"frontAndBackCull\" \n            -transpInShadows 0\n            -cullingOverride \"none\" \n            -lowQualityLighting 0\n            -maximumNumHardwareLights 1\n            -occlusionCulling 0\n            -shadingModel 0\n            -useBaseRenderer 0\n            -useReducedRenderer 0\n            -smallObjectCulling 0\n            -smallObjectThreshold -1 \n            -interactiveDisableShadows 0\n"
+		+ "            -textureSampling 2\n            -textureDisplay \"modulate\" \n            -textureMaxSize 16384\n            -fogging 0\n            -fogSource \"fragment\" \n            -fogMode \"linear\" \n            -fogStart 0\n            -fogEnd 100\n            -fogDensity 0.1\n            -fogColor 0.5 0.5 0.5 1 \n            -depthOfFieldPreview 1\n            -maxConstantTransparency 1\n            -rendererName \"vp2Renderer\" \n            -objectFilterShowInHUD 1\n            -isFiltered 0\n            -colorResolution 256 256 \n            -bumpResolution 512 512 \n            -textureCompression 0\n            -transparencyAlgorithm \"frontAndBackCull\" \n            -transpInShadows 0\n            -cullingOverride \"none\" \n            -lowQualityLighting 0\n            -maximumNumHardwareLights 1\n            -occlusionCulling 0\n            -shadingModel 0\n            -useBaseRenderer 0\n            -useReducedRenderer 0\n            -smallObjectCulling 0\n            -smallObjectThreshold -1 \n            -interactiveDisableShadows 0\n"
 		+ "            -interactiveBackFaceCull 0\n            -sortTransparent 1\n            -controllers 1\n            -nurbsCurves 1\n            -nurbsSurfaces 1\n            -polymeshes 1\n            -subdivSurfaces 1\n            -planes 1\n            -lights 1\n            -cameras 1\n            -controlVertices 1\n            -hulls 1\n            -grid 1\n            -imagePlane 1\n            -joints 1\n            -ikHandles 1\n            -deformers 1\n            -dynamics 1\n            -particleInstancers 1\n            -fluids 1\n            -hairSystems 1\n            -follicles 1\n            -nCloths 1\n            -nParticles 1\n            -nRigids 1\n            -dynamicConstraints 1\n            -locators 1\n            -manipulators 1\n            -pluginShapes 1\n            -dimensions 1\n            -handles 1\n            -pivots 1\n            -textures 1\n            -strokes 1\n            -motionTrails 1\n            -clipGhosts 1\n            -greasePencils 1\n            -shadows 0\n            -captureSequenceNumber -1\n"
-		+ "            -width 0\n            -height 533\n            -sceneRenderFilter 0\n            $editorName;\n        modelEditor -e -viewSelected 0 $editorName;\n\t\tif (!$useSceneConfig) {\n\t\t\tpanel -e -l $label $panelName;\n\t\t}\n\t}\n\n\n\t$panelName = `sceneUIReplacement -getNextPanel \"outlinerPanel\" (localizedPanelLabel(\"ToggledOutliner\")) `;\n\tif (\"\" != $panelName) {\n\t\t$label = `panel -q -label $panelName`;\n\t\toutlinerPanel -edit -l (localizedPanelLabel(\"ToggledOutliner\")) -mbv $menusOkayInPanels  $panelName;\n\t\t$editorName = $panelName;\n        outlinerEditor -e \n            -docTag \"isolOutln_fromSeln\" \n            -showShapes 0\n            -showAssignedMaterials 0\n            -showTimeEditor 1\n            -showReferenceNodes 1\n            -showReferenceMembers 1\n            -showAttributes 0\n            -showConnected 0\n            -showAnimCurvesOnly 0\n            -showMuteInfo 0\n            -organizeByLayer 1\n            -organizeByClip 1\n            -showAnimLayerWeight 1\n            -autoExpandLayers 1\n            -autoExpand 0\n"
+		+ "            -width 898\n            -height 716\n            -sceneRenderFilter 0\n            $editorName;\n        modelEditor -e -viewSelected 0 $editorName;\n\t\tif (!$useSceneConfig) {\n\t\t\tpanel -e -l $label $panelName;\n\t\t}\n\t}\n\n\n\t$panelName = `sceneUIReplacement -getNextPanel \"outlinerPanel\" (localizedPanelLabel(\"ToggledOutliner\")) `;\n\tif (\"\" != $panelName) {\n\t\t$label = `panel -q -label $panelName`;\n\t\toutlinerPanel -edit -l (localizedPanelLabel(\"ToggledOutliner\")) -mbv $menusOkayInPanels  $panelName;\n\t\t$editorName = $panelName;\n        outlinerEditor -e \n            -docTag \"isolOutln_fromSeln\" \n            -showShapes 0\n            -showAssignedMaterials 0\n            -showTimeEditor 1\n            -showReferenceNodes 1\n            -showReferenceMembers 1\n            -showAttributes 0\n            -showConnected 0\n            -showAnimCurvesOnly 0\n            -showMuteInfo 0\n            -organizeByLayer 1\n            -organizeByClip 1\n            -showAnimLayerWeight 1\n            -autoExpandLayers 1\n            -autoExpand 0\n"
 		+ "            -showDagOnly 1\n            -showAssets 1\n            -showContainedOnly 1\n            -showPublishedAsConnected 0\n            -showParentContainers 0\n            -showContainerContents 1\n            -ignoreDagHierarchy 0\n            -expandConnections 0\n            -showUpstreamCurves 1\n            -showUnitlessCurves 1\n            -showCompounds 1\n            -showLeafs 1\n            -showNumericAttrsOnly 0\n            -highlightActive 1\n            -autoSelectNewObjects 0\n            -doNotSelectNewObjects 0\n            -dropIsParent 1\n            -transmitFilters 0\n            -setFilter \"defaultSetFilter\" \n            -showSetMembers 1\n            -allowMultiSelection 1\n            -alwaysToggleSelect 0\n            -directSelect 0\n            -isSet 0\n            -isSetMember 0\n            -displayMode \"DAG\" \n            -expandObjects 0\n            -setsIgnoreFilters 1\n            -containersIgnoreFilters 0\n            -editAttrName 0\n            -showAttrValues 0\n            -highlightSecondary 0\n"
 		+ "            -showUVAttrsOnly 0\n            -showTextureNodesOnly 0\n            -attrAlphaOrder \"default\" \n            -animLayerFilterOptions \"allAffecting\" \n            -sortOrder \"none\" \n            -longNames 0\n            -niceNames 1\n            -showNamespace 1\n            -showPinIcons 0\n            -mapMotionTrails 0\n            -ignoreHiddenAttribute 0\n            -ignoreOutlinerColor 0\n            -renderFilterVisible 0\n            -renderFilterIndex 0\n            -selectionOrder \"chronological\" \n            -expandAttribute 0\n            $editorName;\n\t\tif (!$useSceneConfig) {\n\t\t\tpanel -e -l $label $panelName;\n\t\t}\n\t}\n\n\n\t$panelName = `sceneUIReplacement -getNextPanel \"outlinerPanel\" (localizedPanelLabel(\"Outliner\")) `;\n\tif (\"\" != $panelName) {\n\t\t$label = `panel -q -label $panelName`;\n\t\toutlinerPanel -edit -l (localizedPanelLabel(\"Outliner\")) -mbv $menusOkayInPanels  $panelName;\n\t\t$editorName = $panelName;\n        outlinerEditor -e \n            -showShapes 0\n            -showAssignedMaterials 0\n            -showTimeEditor 1\n"
 		+ "            -showReferenceNodes 0\n            -showReferenceMembers 0\n            -showAttributes 0\n            -showConnected 0\n            -showAnimCurvesOnly 0\n            -showMuteInfo 0\n            -organizeByLayer 1\n            -organizeByClip 1\n            -showAnimLayerWeight 1\n            -autoExpandLayers 1\n            -autoExpand 0\n            -showDagOnly 1\n            -showAssets 1\n            -showContainedOnly 1\n            -showPublishedAsConnected 0\n            -showParentContainers 0\n            -showContainerContents 1\n            -ignoreDagHierarchy 0\n            -expandConnections 0\n            -showUpstreamCurves 1\n            -showUnitlessCurves 1\n            -showCompounds 1\n            -showLeafs 1\n            -showNumericAttrsOnly 0\n            -highlightActive 1\n            -autoSelectNewObjects 0\n            -doNotSelectNewObjects 0\n            -dropIsParent 1\n            -transmitFilters 0\n            -setFilter \"defaultSetFilter\" \n            -showSetMembers 1\n            -allowMultiSelection 1\n"
@@ -4577,8 +4179,8 @@ createNode script -n "uiConfigurationScriptNode";
 		+ "\t\tif (!$useSceneConfig) {\n\t\t\tpanel -e -l $label $panelName;\n\t\t}\n\t}\n\n\n\t$panelName = `sceneUIReplacement -getNextScriptedPanel \"profilerPanel\" (localizedPanelLabel(\"Profiler Tool\")) `;\n\tif (\"\" != $panelName) {\n\t\t$label = `panel -q -label $panelName`;\n\t\tscriptedPanel -edit -l (localizedPanelLabel(\"Profiler Tool\")) -mbv $menusOkayInPanels  $panelName;\n\t\tif (!$useSceneConfig) {\n\t\t\tpanel -e -l $label $panelName;\n\t\t}\n\t}\n\n\n\t$panelName = `sceneUIReplacement -getNextScriptedPanel \"contentBrowserPanel\" (localizedPanelLabel(\"Content Browser\")) `;\n\tif (\"\" != $panelName) {\n\t\t$label = `panel -q -label $panelName`;\n\t\tscriptedPanel -edit -l (localizedPanelLabel(\"Content Browser\")) -mbv $menusOkayInPanels  $panelName;\n\t\tif (!$useSceneConfig) {\n\t\t\tpanel -e -l $label $panelName;\n\t\t}\n\t}\n\n\n\t$panelName = `sceneUIReplacement -getNextScriptedPanel \"nodeEditorPanel\" (localizedPanelLabel(\"Node Editor\")) `;\n\tif (\"\" != $panelName) {\n\t\t$label = `panel -q -label $panelName`;\n\t\tscriptedPanel -edit -l (localizedPanelLabel(\"Node Editor\")) -mbv $menusOkayInPanels  $panelName;\n"
 		+ "\n\t\t\t$editorName = ($panelName+\"NodeEditorEd\");\n            nodeEditor -e \n                -allAttributes 0\n                -allNodes 0\n                -autoSizeNodes 1\n                -consistentNameSize 1\n                -createNodeCommand \"nodeEdCreateNodeCommand\" \n                -connectNodeOnCreation 0\n                -connectOnDrop 0\n                -highlightConnections 0\n                -copyConnectionsOnPaste 0\n                -connectionStyle \"bezier\" \n                -connectionMinSegment 0.03\n                -connectionOffset 0.03\n                -connectionRoundness 0.8\n                -connectionTension -100\n                -defaultPinnedState 0\n                -additiveGraphingMode 0\n                -settingsChangedCallback \"nodeEdSyncControls\" \n                -traversalDepthLimit -1\n                -keyPressCommand \"nodeEdKeyPressCommand\" \n                -nodeTitleMode \"name\" \n                -gridSnap 0\n                -gridVisibility 1\n                -crosshairOnEdgeDragging 0\n                -popupMenuScript \"nodeEdBuildPanelMenus\" \n"
 		+ "                -showNamespace 1\n                -showShapes 1\n                -showSGShapes 0\n                -showTransforms 1\n                -useAssets 1\n                -syncedSelection 1\n                -extendToShapes 1\n                -activeTab 0\n                -editorMode \"default\" \n                $editorName;\n\t\tif (!$useSceneConfig) {\n\t\t\tpanel -e -l $label $panelName;\n\t\t}\n\t}\n\n\n\tif ($useSceneConfig) {\n        string $configName = `getPanel -cwl (localizedPanelLabel(\"Current Layout\"))`;\n        if (\"\" != $configName) {\n\t\t\tpanelConfiguration -edit -label (localizedPanelLabel(\"Current Layout\")) \n\t\t\t\t-userCreated false\n\t\t\t\t-defaultImage \"vacantCell.xP:/\"\n\t\t\t\t-image \"\"\n\t\t\t\t-sc false\n\t\t\t\t-configString \"global string $gMainPane; paneLayout -e -cn \\\"single\\\" -ps 1 100 100 $gMainPane;\"\n\t\t\t\t-removeAllPanels\n\t\t\t\t-ap false\n\t\t\t\t\t(localizedPanelLabel(\"Front View\")) \n\t\t\t\t\t\"modelPanel\"\n"
-		+ "\t\t\t\t\t\"$panelName = `modelPanel -unParent -l (localizedPanelLabel(\\\"Front View\\\")) -mbv $menusOkayInPanels `;\\n$editorName = $panelName;\\nmodelEditor -e \\n    -camera \\\"persp\\\" \\n    -useInteractiveMode 0\\n    -displayLights \\\"default\\\" \\n    -displayAppearance \\\"smoothShaded\\\" \\n    -activeOnly 0\\n    -ignorePanZoom 0\\n    -wireframeOnShaded 0\\n    -headsUpDisplay 1\\n    -holdOuts 1\\n    -selectionHiliteDisplay 1\\n    -useDefaultMaterial 0\\n    -bufferMode \\\"double\\\" \\n    -twoSidedLighting 0\\n    -backfaceCulling 0\\n    -xray 0\\n    -jointXray 0\\n    -activeComponentsXray 0\\n    -displayTextures 0\\n    -smoothWireframe 0\\n    -lineWidth 1\\n    -textureAnisotropic 0\\n    -textureHilight 1\\n    -textureSampling 2\\n    -textureDisplay \\\"modulate\\\" \\n    -textureMaxSize 32768\\n    -fogging 0\\n    -fogSource \\\"fragment\\\" \\n    -fogMode \\\"linear\\\" \\n    -fogStart 0\\n    -fogEnd 100\\n    -fogDensity 0.1\\n    -fogColor 0.5 0.5 0.5 1 \\n    -depthOfFieldPreview 1\\n    -maxConstantTransparency 1\\n    -rendererName \\\"vp2Renderer\\\" \\n    -objectFilterShowInHUD 1\\n    -isFiltered 0\\n    -colorResolution 256 256 \\n    -bumpResolution 512 512 \\n    -textureCompression 0\\n    -transparencyAlgorithm \\\"frontAndBackCull\\\" \\n    -transpInShadows 0\\n    -cullingOverride \\\"none\\\" \\n    -lowQualityLighting 0\\n    -maximumNumHardwareLights 1\\n    -occlusionCulling 0\\n    -shadingModel 0\\n    -useBaseRenderer 0\\n    -useReducedRenderer 0\\n    -smallObjectCulling 0\\n    -smallObjectThreshold -1 \\n    -interactiveDisableShadows 0\\n    -interactiveBackFaceCull 0\\n    -sortTransparent 1\\n    -controllers 1\\n    -nurbsCurves 1\\n    -nurbsSurfaces 1\\n    -polymeshes 1\\n    -subdivSurfaces 1\\n    -planes 1\\n    -lights 1\\n    -cameras 1\\n    -controlVertices 1\\n    -hulls 1\\n    -grid 1\\n    -imagePlane 1\\n    -joints 1\\n    -ikHandles 1\\n    -deformers 1\\n    -dynamics 1\\n    -particleInstancers 1\\n    -fluids 1\\n    -hairSystems 1\\n    -follicles 1\\n    -nCloths 1\\n    -nParticles 1\\n    -nRigids 1\\n    -dynamicConstraints 1\\n    -locators 1\\n    -manipulators 1\\n    -pluginShapes 1\\n    -dimensions 1\\n    -handles 1\\n    -pivots 1\\n    -textures 1\\n    -strokes 1\\n    -motionTrails 1\\n    -clipGhosts 1\\n    -greasePencils 1\\n    -shadows 0\\n    -captureSequenceNumber -1\\n    -width 955\\n    -height 197\\n    -sceneRenderFilter 0\\n    $editorName;\\nmodelEditor -e -viewSelected 0 $editorName\"\n"
-		+ "\t\t\t\t\t\"modelPanel -edit -l (localizedPanelLabel(\\\"Front View\\\")) -mbv $menusOkayInPanels  $panelName;\\n$editorName = $panelName;\\nmodelEditor -e \\n    -camera \\\"persp\\\" \\n    -useInteractiveMode 0\\n    -displayLights \\\"default\\\" \\n    -displayAppearance \\\"smoothShaded\\\" \\n    -activeOnly 0\\n    -ignorePanZoom 0\\n    -wireframeOnShaded 0\\n    -headsUpDisplay 1\\n    -holdOuts 1\\n    -selectionHiliteDisplay 1\\n    -useDefaultMaterial 0\\n    -bufferMode \\\"double\\\" \\n    -twoSidedLighting 0\\n    -backfaceCulling 0\\n    -xray 0\\n    -jointXray 0\\n    -activeComponentsXray 0\\n    -displayTextures 0\\n    -smoothWireframe 0\\n    -lineWidth 1\\n    -textureAnisotropic 0\\n    -textureHilight 1\\n    -textureSampling 2\\n    -textureDisplay \\\"modulate\\\" \\n    -textureMaxSize 32768\\n    -fogging 0\\n    -fogSource \\\"fragment\\\" \\n    -fogMode \\\"linear\\\" \\n    -fogStart 0\\n    -fogEnd 100\\n    -fogDensity 0.1\\n    -fogColor 0.5 0.5 0.5 1 \\n    -depthOfFieldPreview 1\\n    -maxConstantTransparency 1\\n    -rendererName \\\"vp2Renderer\\\" \\n    -objectFilterShowInHUD 1\\n    -isFiltered 0\\n    -colorResolution 256 256 \\n    -bumpResolution 512 512 \\n    -textureCompression 0\\n    -transparencyAlgorithm \\\"frontAndBackCull\\\" \\n    -transpInShadows 0\\n    -cullingOverride \\\"none\\\" \\n    -lowQualityLighting 0\\n    -maximumNumHardwareLights 1\\n    -occlusionCulling 0\\n    -shadingModel 0\\n    -useBaseRenderer 0\\n    -useReducedRenderer 0\\n    -smallObjectCulling 0\\n    -smallObjectThreshold -1 \\n    -interactiveDisableShadows 0\\n    -interactiveBackFaceCull 0\\n    -sortTransparent 1\\n    -controllers 1\\n    -nurbsCurves 1\\n    -nurbsSurfaces 1\\n    -polymeshes 1\\n    -subdivSurfaces 1\\n    -planes 1\\n    -lights 1\\n    -cameras 1\\n    -controlVertices 1\\n    -hulls 1\\n    -grid 1\\n    -imagePlane 1\\n    -joints 1\\n    -ikHandles 1\\n    -deformers 1\\n    -dynamics 1\\n    -particleInstancers 1\\n    -fluids 1\\n    -hairSystems 1\\n    -follicles 1\\n    -nCloths 1\\n    -nParticles 1\\n    -nRigids 1\\n    -dynamicConstraints 1\\n    -locators 1\\n    -manipulators 1\\n    -pluginShapes 1\\n    -dimensions 1\\n    -handles 1\\n    -pivots 1\\n    -textures 1\\n    -strokes 1\\n    -motionTrails 1\\n    -clipGhosts 1\\n    -greasePencils 1\\n    -shadows 0\\n    -captureSequenceNumber -1\\n    -width 955\\n    -height 197\\n    -sceneRenderFilter 0\\n    $editorName;\\nmodelEditor -e -viewSelected 0 $editorName\"\n"
+		+ "\t\t\t\t\t\"$panelName = `modelPanel -unParent -l (localizedPanelLabel(\\\"Front View\\\")) -mbv $menusOkayInPanels `;\\n$editorName = $panelName;\\nmodelEditor -e \\n    -camera \\\"persp\\\" \\n    -useInteractiveMode 0\\n    -displayLights \\\"default\\\" \\n    -displayAppearance \\\"smoothShaded\\\" \\n    -activeOnly 0\\n    -ignorePanZoom 0\\n    -wireframeOnShaded 0\\n    -headsUpDisplay 1\\n    -holdOuts 1\\n    -selectionHiliteDisplay 1\\n    -useDefaultMaterial 0\\n    -bufferMode \\\"double\\\" \\n    -twoSidedLighting 0\\n    -backfaceCulling 0\\n    -xray 0\\n    -jointXray 0\\n    -activeComponentsXray 0\\n    -displayTextures 0\\n    -smoothWireframe 0\\n    -lineWidth 1\\n    -textureAnisotropic 0\\n    -textureHilight 1\\n    -textureSampling 2\\n    -textureDisplay \\\"modulate\\\" \\n    -textureMaxSize 16384\\n    -fogging 0\\n    -fogSource \\\"fragment\\\" \\n    -fogMode \\\"linear\\\" \\n    -fogStart 0\\n    -fogEnd 100\\n    -fogDensity 0.1\\n    -fogColor 0.5 0.5 0.5 1 \\n    -depthOfFieldPreview 1\\n    -maxConstantTransparency 1\\n    -rendererName \\\"vp2Renderer\\\" \\n    -objectFilterShowInHUD 1\\n    -isFiltered 0\\n    -colorResolution 256 256 \\n    -bumpResolution 512 512 \\n    -textureCompression 0\\n    -transparencyAlgorithm \\\"frontAndBackCull\\\" \\n    -transpInShadows 0\\n    -cullingOverride \\\"none\\\" \\n    -lowQualityLighting 0\\n    -maximumNumHardwareLights 1\\n    -occlusionCulling 0\\n    -shadingModel 0\\n    -useBaseRenderer 0\\n    -useReducedRenderer 0\\n    -smallObjectCulling 0\\n    -smallObjectThreshold -1 \\n    -interactiveDisableShadows 0\\n    -interactiveBackFaceCull 0\\n    -sortTransparent 1\\n    -controllers 1\\n    -nurbsCurves 1\\n    -nurbsSurfaces 1\\n    -polymeshes 1\\n    -subdivSurfaces 1\\n    -planes 1\\n    -lights 1\\n    -cameras 1\\n    -controlVertices 1\\n    -hulls 1\\n    -grid 1\\n    -imagePlane 1\\n    -joints 1\\n    -ikHandles 1\\n    -deformers 1\\n    -dynamics 1\\n    -particleInstancers 1\\n    -fluids 1\\n    -hairSystems 1\\n    -follicles 1\\n    -nCloths 1\\n    -nParticles 1\\n    -nRigids 1\\n    -dynamicConstraints 1\\n    -locators 1\\n    -manipulators 1\\n    -pluginShapes 1\\n    -dimensions 1\\n    -handles 1\\n    -pivots 1\\n    -textures 1\\n    -strokes 1\\n    -motionTrails 1\\n    -clipGhosts 1\\n    -greasePencils 1\\n    -shadows 0\\n    -captureSequenceNumber -1\\n    -width 1319\\n    -height 362\\n    -sceneRenderFilter 0\\n    $editorName;\\nmodelEditor -e -viewSelected 0 $editorName\"\n"
+		+ "\t\t\t\t\t\"modelPanel -edit -l (localizedPanelLabel(\\\"Front View\\\")) -mbv $menusOkayInPanels  $panelName;\\n$editorName = $panelName;\\nmodelEditor -e \\n    -camera \\\"persp\\\" \\n    -useInteractiveMode 0\\n    -displayLights \\\"default\\\" \\n    -displayAppearance \\\"smoothShaded\\\" \\n    -activeOnly 0\\n    -ignorePanZoom 0\\n    -wireframeOnShaded 0\\n    -headsUpDisplay 1\\n    -holdOuts 1\\n    -selectionHiliteDisplay 1\\n    -useDefaultMaterial 0\\n    -bufferMode \\\"double\\\" \\n    -twoSidedLighting 0\\n    -backfaceCulling 0\\n    -xray 0\\n    -jointXray 0\\n    -activeComponentsXray 0\\n    -displayTextures 0\\n    -smoothWireframe 0\\n    -lineWidth 1\\n    -textureAnisotropic 0\\n    -textureHilight 1\\n    -textureSampling 2\\n    -textureDisplay \\\"modulate\\\" \\n    -textureMaxSize 16384\\n    -fogging 0\\n    -fogSource \\\"fragment\\\" \\n    -fogMode \\\"linear\\\" \\n    -fogStart 0\\n    -fogEnd 100\\n    -fogDensity 0.1\\n    -fogColor 0.5 0.5 0.5 1 \\n    -depthOfFieldPreview 1\\n    -maxConstantTransparency 1\\n    -rendererName \\\"vp2Renderer\\\" \\n    -objectFilterShowInHUD 1\\n    -isFiltered 0\\n    -colorResolution 256 256 \\n    -bumpResolution 512 512 \\n    -textureCompression 0\\n    -transparencyAlgorithm \\\"frontAndBackCull\\\" \\n    -transpInShadows 0\\n    -cullingOverride \\\"none\\\" \\n    -lowQualityLighting 0\\n    -maximumNumHardwareLights 1\\n    -occlusionCulling 0\\n    -shadingModel 0\\n    -useBaseRenderer 0\\n    -useReducedRenderer 0\\n    -smallObjectCulling 0\\n    -smallObjectThreshold -1 \\n    -interactiveDisableShadows 0\\n    -interactiveBackFaceCull 0\\n    -sortTransparent 1\\n    -controllers 1\\n    -nurbsCurves 1\\n    -nurbsSurfaces 1\\n    -polymeshes 1\\n    -subdivSurfaces 1\\n    -planes 1\\n    -lights 1\\n    -cameras 1\\n    -controlVertices 1\\n    -hulls 1\\n    -grid 1\\n    -imagePlane 1\\n    -joints 1\\n    -ikHandles 1\\n    -deformers 1\\n    -dynamics 1\\n    -particleInstancers 1\\n    -fluids 1\\n    -hairSystems 1\\n    -follicles 1\\n    -nCloths 1\\n    -nParticles 1\\n    -nRigids 1\\n    -dynamicConstraints 1\\n    -locators 1\\n    -manipulators 1\\n    -pluginShapes 1\\n    -dimensions 1\\n    -handles 1\\n    -pivots 1\\n    -textures 1\\n    -strokes 1\\n    -motionTrails 1\\n    -clipGhosts 1\\n    -greasePencils 1\\n    -shadows 0\\n    -captureSequenceNumber -1\\n    -width 1319\\n    -height 362\\n    -sceneRenderFilter 0\\n    $editorName;\\nmodelEditor -e -viewSelected 0 $editorName\"\n"
 		+ "\t\t\t\t$configName;\n\n            setNamedPanelLayout (localizedPanelLabel(\"Current Layout\"));\n        }\n\n        panelHistory -e -clear mainPanelHistory;\n        sceneUIReplacement -clear;\n\t}\n\n\ngrid -spacing 5 -size 12 -divisions 5 -displayAxes yes -displayGridLines yes -displayDivisionLines yes -displayPerspectiveLabels no -displayOrthographicLabels no -displayAxesBold yes -perspectiveLabelPosition axis -orthographicLabelPosition edge;\nviewManip -drawCompass 0 -compassAngle 0 -frontParameters \"\" -homeParameters \"\" -selectionLockParameters \"\";\n}\n");
 	setAttr ".st" 3;
 createNode script -n "sceneConfigurationScriptNode";
@@ -4609,48 +4211,30 @@ createNode groupId -n "groupId3";
 createNode reverse -n "reverse1";
 	rename -uid "E51A4874-4C3A-8413-93F4-B9AA1C2399A0";
 createNode nodeGraphEditorInfo -n "MayaNodeEditorSavedTabsInfo";
-	rename -uid "1D34DD59-493C-81EA-9EB0-8A910DE814FB";
+	rename -uid "188A0640-41F1-9931-7E6D-24A735F03833";
 	setAttr ".pee" yes;
 	setAttr ".tgi[0].tn" -type "string" "Untitled_1";
-	setAttr ".tgi[0].vl" -type "double2" -162.39276492496012 -825.64545220517016 ;
-	setAttr ".tgi[0].vh" -type "double2" 725.22624742327662 -433.26451541603547 ;
-	setAttr -s 12 ".tgi[0].ni";
-	setAttr ".tgi[0].ni[0].x" 641.4285888671875;
-	setAttr ".tgi[0].ni[0].y" -838.5714111328125;
+	setAttr ".tgi[0].vl" -type "double2" -567.14429072735879 -671.19866444063769 ;
+	setAttr ".tgi[0].vh" -type "double2" 1261.2573157401312 -297.33568163671418 ;
+	setAttr -s 6 ".tgi[0].ni";
+	setAttr ".tgi[0].ni[0].x" 833.4840087890625;
+	setAttr ".tgi[0].ni[0].y" 13.186977386474609;
 	setAttr ".tgi[0].ni[0].nvs" 18304;
-	setAttr ".tgi[0].ni[1].x" 1237.142822265625;
-	setAttr ".tgi[0].ni[1].y" -305.71429443359375;
-	setAttr ".tgi[0].ni[1].nvs" 18304;
-	setAttr ".tgi[0].ni[2].x" 1255.7142333984375;
-	setAttr ".tgi[0].ni[2].y" -522.85711669921875;
+	setAttr ".tgi[0].ni[1].x" 98.809532165527344;
+	setAttr ".tgi[0].ni[1].y" 107.19842529296875;
+	setAttr ".tgi[0].ni[1].nvs" 18306;
+	setAttr ".tgi[0].ni[2].x" 378.80950927734375;
+	setAttr ".tgi[0].ni[2].y" 64.817474365234375;
 	setAttr ".tgi[0].ni[2].nvs" 18304;
-	setAttr ".tgi[0].ni[3].x" 617.142822265625;
-	setAttr ".tgi[0].ni[3].y" -51.849185943603516;
-	setAttr ".tgi[0].ni[3].nvs" 18306;
-	setAttr ".tgi[0].ni[4].x" 98.809532165527344;
-	setAttr ".tgi[0].ni[4].y" 107.19842529296875;
+	setAttr ".tgi[0].ni[3].x" 65.714286804199219;
+	setAttr ".tgi[0].ni[3].y" -385.71429443359375;
+	setAttr ".tgi[0].ni[3].nvs" 18304;
+	setAttr ".tgi[0].ni[4].x" 104.17617797851563;
+	setAttr ".tgi[0].ni[4].y" -486.74862670898438;
 	setAttr ".tgi[0].ni[4].nvs" 18306;
-	setAttr ".tgi[0].ni[5].x" 856.42852783203125;
-	setAttr ".tgi[0].ni[5].y" -50.658710479736328;
-	setAttr ".tgi[0].ni[5].nvs" 18306;
-	setAttr ".tgi[0].ni[6].x" 378.80950927734375;
-	setAttr ".tgi[0].ni[6].y" 64.817474365234375;
-	setAttr ".tgi[0].ni[6].nvs" 18306;
-	setAttr ".tgi[0].ni[7].x" 338.57144165039063;
-	setAttr ".tgi[0].ni[7].y" -682.85711669921875;
-	setAttr ".tgi[0].ni[7].nvs" 18304;
-	setAttr ".tgi[0].ni[8].x" 65.714286804199219;
-	setAttr ".tgi[0].ni[8].y" -385.71429443359375;
-	setAttr ".tgi[0].ni[8].nvs" 18304;
-	setAttr ".tgi[0].ni[9].x" 104.17617797851563;
-	setAttr ".tgi[0].ni[9].y" -486.74862670898438;
-	setAttr ".tgi[0].ni[9].nvs" 18306;
-	setAttr ".tgi[0].ni[10].x" 462.85714721679688;
-	setAttr ".tgi[0].ni[10].y" -452.85714721679688;
-	setAttr ".tgi[0].ni[10].nvs" 18304;
-	setAttr ".tgi[0].ni[11].x" 481.42855834960938;
-	setAttr ".tgi[0].ni[11].y" -452.85714721679688;
-	setAttr ".tgi[0].ni[11].nvs" 18304;
+	setAttr ".tgi[0].ni[5].x" 617.142822265625;
+	setAttr ".tgi[0].ni[5].y" -51.849185943603516;
+	setAttr ".tgi[0].ni[5].nvs" 18304;
 select -ne :time1;
 	setAttr ".o" 1;
 	setAttr ".unw" 1;
@@ -4682,7 +4266,6 @@ select -ne :hardwareRenderGlobals;
 	setAttr ".ctrs" 256;
 	setAttr ".btrs" 512;
 select -ne :ikSystem;
-	setAttr -s 4 ".sol";
 connectAttr "transformGeometry1.og" "Lamp_refRN.phl[1]";
 connectAttr "transformGeometry2.og" "Lamp_refRN.phl[2]";
 connectAttr "transformGeometry3.og" "Lamp_refRN.phl[3]";
@@ -5020,28 +4603,16 @@ connectAttr "renderLayerManager.rlmi[0]" "defaultRenderLayer.rlid";
 connectAttr "IKFK_switch_Cntrl.FKIKSwitch" "reverse1.ix";
 connectAttr "IKFK_switch_Cntrl.FKIKSwitch" "reverse1.iy";
 connectAttr "IKFK_switch_Cntrl.FKIKSwitch" "reverse1.iz";
-connectAttr "FK_Elbow_Jnt_parentConstraint1.msg" "MayaNodeEditorSavedTabsInfo.tgi[0].ni[0].dn"
+connectAttr "RK_Elbow_Jnt_parentConstraint1.msg" "MayaNodeEditorSavedTabsInfo.tgi[0].ni[0].dn"
 		;
-connectAttr "FK_Shoulder_jnt1_parentConstraint1.msg" "MayaNodeEditorSavedTabsInfo.tgi[0].ni[1].dn"
+connectAttr "IKFK_switch_Cntrl.msg" "MayaNodeEditorSavedTabsInfo.tgi[0].ni[1].dn"
 		;
-connectAttr "FK_wrist_jnt_parentConstraint1.msg" "MayaNodeEditorSavedTabsInfo.tgi[0].ni[2].dn"
+connectAttr "RK_wrist_jnt_parentConstraint1.msg" "MayaNodeEditorSavedTabsInfo.tgi[0].ni[2].dn"
 		;
-connectAttr "Rk_Shoulder_jnt_parentConstraint1.msg" "MayaNodeEditorSavedTabsInfo.tgi[0].ni[3].dn"
+connectAttr "head_geo_parentConstraint1.msg" "MayaNodeEditorSavedTabsInfo.tgi[0].ni[3].dn"
 		;
-connectAttr "IKFK_switch_Cntrl.msg" "MayaNodeEditorSavedTabsInfo.tgi[0].ni[4].dn"
-		;
-connectAttr "RK_Elbow_Jnt_parentConstraint1.msg" "MayaNodeEditorSavedTabsInfo.tgi[0].ni[5].dn"
-		;
-connectAttr "RK_wrist_jnt_parentConstraint1.msg" "MayaNodeEditorSavedTabsInfo.tgi[0].ni[6].dn"
-		;
-connectAttr "upper_arm_geo_parentConstraint1.msg" "MayaNodeEditorSavedTabsInfo.tgi[0].ni[7].dn"
-		;
-connectAttr "head_geo_parentConstraint1.msg" "MayaNodeEditorSavedTabsInfo.tgi[0].ni[8].dn"
-		;
-connectAttr "reverse1.msg" "MayaNodeEditorSavedTabsInfo.tgi[0].ni[9].dn";
-connectAttr "lower_arm_geo_parentConstraint1.msg" "MayaNodeEditorSavedTabsInfo.tgi[0].ni[10].dn"
-		;
-connectAttr "base_geo_parentConstraint1.msg" "MayaNodeEditorSavedTabsInfo.tgi[0].ni[11].dn"
+connectAttr "reverse1.msg" "MayaNodeEditorSavedTabsInfo.tgi[0].ni[4].dn";
+connectAttr "Rk_Shoulder_jnt_parentConstraint1.msg" "MayaNodeEditorSavedTabsInfo.tgi[0].ni[5].dn"
 		;
 connectAttr "reverse1.msg" ":defaultRenderUtilityList1.u" -na;
 connectAttr "defaultRenderLayer.msg" ":defaultRenderingList1.r" -na;
